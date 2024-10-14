@@ -10,21 +10,35 @@ new FormModel {
 			name: "this"
 			"preferredSize": new java.awt.Dimension( 900, 500 )
 			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-				"$horizontalGroup": "par l {seq l {space :p:225:p, comp label1:::p:121:p}, seq l {space :p:9:p, comp label2:::p::p, space s:::p, comp usernameLbl:::p:117:p}}"
-				"$verticalGroup": "par l {seq l {space :p:19:p, par l:::p {comp label2::::31:x, comp usernameLbl::::31:x}, space :::p, comp label1:::p::p, space ::444:x}}"
+				"$horizontalGroup": "par t {seq l {par l {seq {par l {seq {space :p:15:p, comp label2:::p:54:p}, seq l {space :p:22:p, comp label3:::p::p}}, space u:::p, par l {comp usernameLbl:::p:173:p, seq t {comp firstChatLbl:::p::p, space :p:72:p}}}, seq {space :::p, comp searchBarTF:::p:248:p}}, space :::p, comp label1:::p:121:p}}"
+				"$verticalGroup": "par l {seq l {space :p:31:p, par l:::p {comp usernameLbl:::::x, comp label2:::p:43:p}, space u:::p, comp searchBarTF:::p:30:p, space :p:14:p, par b {comp firstChatLbl::b:p::p, comp label3::b:p::p}, space :::p, comp label1:::p::p, space ::340:x}}"
 			} ) {
 				name: "panel1"
 				"preferredSize": new java.awt.Dimension( 260, 500 )
+				"background": new java.awt.Color( 255, 95, 109, 255 )
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "label1"
 				} )
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "usernameLbl"
 					"text": "Snehal Shelte"
-					"font": new java.awt.Font( "Yu Gothic UI Semibold", 1, 17 )
+					"font": &Font0 new java.awt.Font( "Yu Gothic UI Semibold", 1, 17 )
+					"border": new javax.swing.border.MatteBorder( 0, 0, 2, 0, sfield java.awt.Color black )
 				} )
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "label2"
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/Images/person_16dp.png" )
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "firstChatLbl"
+					"text": "Roshan Zope"
+					"font": #Font0
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "searchBarTF"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label3"
 					"text": "text"
 				} )
 			} )
@@ -46,3 +60,20 @@ new FormModel {
 		} )
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
