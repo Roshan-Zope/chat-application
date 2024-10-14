@@ -1,0 +1,135 @@
+/*
+ * Created by JFormDesigner on Mon Oct 14 17:39:57 GMT+05:30 2024
+ */
+
+package org.example.chatApplication.view;
+
+import java.awt.*;
+import javax.swing.*;
+import javax.swing.GroupLayout;
+
+/**
+ * @author shelt
+ */
+public class HomeForm extends JPanel {
+    public HomeForm() {
+        initComponents();
+    }
+
+    private void initComponents() {
+        // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents  @formatter:off
+        // Generated using JFormDesigner Evaluation license - Snehal Shelte
+        panel1 = new JPanel();
+        label1 = new JLabel();
+        usernameLbl = new JLabel();
+        label2 = new JLabel();
+        panel2 = new JPanel();
+        panel3 = new JPanel();
+
+        //======== this ========
+        setPreferredSize(new Dimension(900, 500));
+        setBorder ( new javax . swing. border .CompoundBorder ( new javax . swing. border .TitledBorder ( new javax . swing. border .
+        EmptyBorder ( 0, 0 ,0 , 0) ,  "JF\u006frmD\u0065sig\u006eer \u0045val\u0075ati\u006fn" , javax. swing .border . TitledBorder. CENTER ,javax . swing
+        . border .TitledBorder . BOTTOM, new java. awt .Font ( "Dia\u006cog", java .awt . Font. BOLD ,12 ) ,
+        java . awt. Color .red ) , getBorder () ) );  addPropertyChangeListener( new java. beans .PropertyChangeListener ( )
+        { @Override public void propertyChange (java . beans. PropertyChangeEvent e) { if( "\u0062ord\u0065r" .equals ( e. getPropertyName () ) )
+        throw new RuntimeException( ) ;} } );
+
+        //======== panel1 ========
+        {
+            panel1.setPreferredSize(new Dimension(260, 500));
+
+            //---- usernameLbl ----
+            usernameLbl.setText("Snehal Shelte");
+            usernameLbl.setFont(new Font("Yu Gothic UI Semibold", Font.BOLD, 17));
+
+            //---- label2 ----
+            label2.setText("text");
+
+            GroupLayout panel1Layout = new GroupLayout(panel1);
+            panel1.setLayout(panel1Layout);
+            panel1Layout.setHorizontalGroup(
+                panel1Layout.createParallelGroup()
+                    .addGroup(panel1Layout.createSequentialGroup()
+                        .addGap(225, 225, 225)
+                        .addComponent(label1, GroupLayout.PREFERRED_SIZE, 121, GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panel1Layout.createSequentialGroup()
+                        .addGap(9, 9, 9)
+                        .addComponent(label2)
+                        .addGap(18, 18, 18)
+                        .addComponent(usernameLbl, GroupLayout.PREFERRED_SIZE, 117, GroupLayout.PREFERRED_SIZE))
+            );
+            panel1Layout.setVerticalGroup(
+                panel1Layout.createParallelGroup()
+                    .addGroup(panel1Layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addGroup(panel1Layout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                            .addComponent(label2, GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE)
+                            .addComponent(usernameLbl, GroupLayout.DEFAULT_SIZE, 31, Short.MAX_VALUE))
+                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(label1)
+                        .addContainerGap(444, Short.MAX_VALUE))
+            );
+        }
+
+        //======== panel2 ========
+        {
+
+            GroupLayout panel2Layout = new GroupLayout(panel2);
+            panel2.setLayout(panel2Layout);
+            panel2Layout.setHorizontalGroup(
+                panel2Layout.createParallelGroup()
+                    .addGap(0, 399, Short.MAX_VALUE)
+            );
+            panel2Layout.setVerticalGroup(
+                panel2Layout.createParallelGroup()
+                    .addGap(0, 500, Short.MAX_VALUE)
+            );
+        }
+
+        //======== panel3 ========
+        {
+
+            GroupLayout panel3Layout = new GroupLayout(panel3);
+            panel3.setLayout(panel3Layout);
+            panel3Layout.setHorizontalGroup(
+                panel3Layout.createParallelGroup()
+                    .addGap(0, 223, Short.MAX_VALUE)
+            );
+            panel3Layout.setVerticalGroup(
+                panel3Layout.createParallelGroup()
+                    .addGap(0, 500, Short.MAX_VALUE)
+            );
+        }
+
+        GroupLayout layout = new GroupLayout(this);
+        setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup()
+                .addGroup(layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(panel1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(panel2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(panel3, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup()
+                .addComponent(panel1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(panel2, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(panel3, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        // JFormDesigner - End of component initialization  //GEN-END:initComponents  @formatter:on
+    }
+
+    // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables  @formatter:off
+    // Generated using JFormDesigner Evaluation license - Snehal Shelte
+    private JPanel panel1;
+    private JLabel label1;
+    private JLabel usernameLbl;
+    private JLabel label2;
+    private JPanel panel2;
+    private JPanel panel3;
+    // JFormDesigner - End of variables declaration  //GEN-END:variables  @formatter:on
+}
