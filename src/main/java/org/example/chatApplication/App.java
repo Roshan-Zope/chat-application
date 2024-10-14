@@ -12,6 +12,7 @@ public class App {
             frame.add(form.getMainPanel());
             frame.setSize(900, 500);
             frame.setVisible(true);
+            frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         });
     }
 }
