@@ -1,0 +1,75 @@
+JFDML JFormDesigner: "8.2.4.0.393" Java: "17.0.10" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq l {comp leftPanel:::p::p, space :::p, comp rightPanel:::p::p, space :::x}}"
+			"$verticalGroup": "par l {comp leftPanel:::::x, comp rightPanel::l:::x}"
+		} ) {
+			name: "this"
+			"preferredSize": new java.awt.Dimension( 900, 500 )
+			auxiliary() {
+				"JavaCodeGenerator.variableName": "mainPanel"
+			}
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+				"$horizontalGroup": "par l {space :0:360:x}"
+				"$verticalGroup": "par l {space :0:500:x}"
+			} ) {
+				name: "leftPanel"
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+				"$horizontalGroup": "par l {seq {par l {seq l {space :p:208:p, comp signupLbl:::p:131:p}, seq l {space :p:78:p, comp confirmPasswordLbl:::p::p}, seq l {space :p:70:p, par l {comp confirmPasswordPF:::p:360:p, par l:::p {comp passwordPF::::360:x, comp emailTF::l:::x, comp passwordLbl::l:p::p, comp emailLbl::l:p::p}, seq {space :6:6:p, comp button1:::p::p}}}, seq l {space :p:204:p, comp button2:::p::p}}, space ::258:x}}"
+				"$verticalGroup": "par l {seq l {space :p:38:p, comp signupLbl:::p:45:p, space :p:56:p, comp emailLbl:::p::p, space u:::p, comp emailTF:::p::p, space u:::p, comp passwordLbl:::p::p, space :::p, comp passwordPF:::p::p, space s:::p, comp confirmPasswordLbl:::p::p, space u:::p, comp confirmPasswordPF:::p::p, space :::p, comp button1:::p::p, space u:::p, comp button2:::p::p, space ::28:x}}"
+			} ) {
+				name: "rightPanel"
+				"background": new java.awt.Color( 13, 146, 244, 255 )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "signupLbl"
+					"text": "Sign Up"
+					"horizontalAlignment": 0
+					"font": new java.awt.Font( "Perpetua Titling MT", 1, 24 )
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "emailLbl"
+					"text": "Email"
+					"font": new java.awt.Font( "JetBrains Mono", 0, 18 )
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "emailTF"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "passwordLbl"
+					"text": "Password"
+					"font": new java.awt.Font( "JetBrains Mono", 0, 18 )
+				} )
+				add( new FormComponent( "javax.swing.JPasswordField" ) {
+					name: "passwordPF"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "confirmPasswordLbl"
+					"text": "Confirm Password"
+					"font": new java.awt.Font( "JetBrains Mono", 0, 18 )
+				} )
+				add( new FormComponent( "javax.swing.JPasswordField" ) {
+					name: "confirmPasswordPF"
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "button1"
+					"text": "Already have an accoubnt? Login here..."
+					"contentAreaFilled": false
+					"font": new java.awt.Font( "JetBrains Mono ExtraBold", 0, 13 )
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "button2"
+					"text": "Sign up"
+					"contentAreaFilled": false
+					"font": new java.awt.Font( "JetBrains Mono", 1, 13 )
+				} )
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 900, 500 )
+		} )
+	}
+}

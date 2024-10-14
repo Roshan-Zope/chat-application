@@ -29,8 +29,8 @@ new FormModel {
 					"minimumSize": new java.awt.Dimension( 360, 500 )
 				} )
 				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-					"$horizontalGroup": "par l {seq t {space :0:0:x, comp LoginLbl:::p:144:p, space :p:163:p}, seq {par l {seq l {space :p:70:p, par l {comp usernameLbl::l:p:114:p, comp passwordLbl::l:p:114:p, seq l {space :p:6:p, par l {comp usernameTF:::p:360:p, comp passwordPF:::p:360:p}}}}, seq l {space :p:169:p, comp forgotPasswordBtn:::p::p}, seq l {space :p:96:p, comp signupLink:::p::p}, seq l {space :p:147:p, comp loginBtn:::p:220:p}}, space :::x}}"
-					"$verticalGroup": "par l {seq l {space :p:35:p, comp LoginLbl:::p:55:p, space :p:42:p, comp usernameLbl:::p:36:p, space u:::p, comp usernameTF:::p::p, space :p:12:p, comp passwordLbl:::p:36:p, space :::p, comp passwordPF:::p::p, space u:::p, comp forgotPasswordBtn:::p::p, space :::p, comp signupLink:::p::p, space :p:30:p, comp loginBtn:::p:60:p, space :::x}}"
+					"$horizontalGroup": "par l {seq t {space :0:0:x, comp LoginLbl:::p:144:p, space :p:163:p}, seq {par l {seq l {space :p:70:p, par l {comp passwordLbl::l:p:114:p, comp emailLbl::l:p:114:p, comp emailTF::l:p:360:p, comp passwordPF::l:p:360:p}}, seq l {space :p:169:p, comp forgotPasswordBtn:::p::p}, seq l {space :p:96:p, comp signupLink:::p::p}, seq l {space :p:147:p, comp loginBtn:::p:220:p}}, space ::144:x}}"
+					"$verticalGroup": "par l {seq l {space :p:35:p, comp LoginLbl:::p:55:p, space :p:42:p, comp emailLbl:::p:36:p, space :::p, comp emailTF:::p::p, space :p:18:p, comp passwordLbl:::p:36:p, space :::p, comp passwordPF:::p::p, space :p:12:p, comp forgotPasswordBtn:::p::p, space :::p, comp signupLink:::p::p, space :p:30:p, comp loginBtn:::p:60:p, space :::x}}"
 				} ) {
 					name: "rightPanel"
 					"preferredSize": new java.awt.Dimension( 540, 500 )
@@ -44,18 +44,16 @@ new FormModel {
 						"foreground": sfield java.awt.Color white
 					} )
 					add( new FormComponent( "javax.swing.JLabel" ) {
-						name: "usernameLbl"
-						"horizontalAlignment": 0
+						name: "emailLbl"
 						"font": &Font0 new java.awt.Font( "JetBrains Mono", 0, 18 )
-						"text": "Username"
+						"text": "Email"
 						"foreground": sfield java.awt.Color white
 					} )
 					add( new FormComponent( "javax.swing.JTextField" ) {
-						name: "usernameTF"
+						name: "emailTF"
 					} )
 					add( new FormComponent( "javax.swing.JLabel" ) {
 						name: "passwordLbl"
-						"horizontalAlignment": 0
 						"font": #Font0
 						"text": "Password"
 						"foreground": sfield java.awt.Color white
