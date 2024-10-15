@@ -22,7 +22,7 @@ public class SignupForm extends JPanel {
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents  @formatter:off
-        // Generated using JFormDesigner Evaluation license - Roshan Rajendra Zope
+        // Generated using JFormDesigner Evaluation license - Snehal Shelte
         mainPanel = new JPanel();
         rightPanel = new JPanel();
         signupLbl = new JLabel();
@@ -39,51 +39,58 @@ public class SignupForm extends JPanel {
 
         //======== this ========
         setPreferredSize(new Dimension(900, 500));
-        setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new javax. swing
-        . border. EmptyBorder( 0, 0, 0, 0) , "JF\u006frmD\u0065sig\u006eer \u0045val\u0075ati\u006fn", javax. swing. border. TitledBorder
-        . CENTER, javax. swing. border. TitledBorder. BOTTOM, new java .awt .Font ("Dia\u006cog" ,java .
-        awt .Font .BOLD ,12 ), java. awt. Color. red) , getBorder( )) )
-        ;  addPropertyChangeListener (new java. beans. PropertyChangeListener( ){ @Override public void propertyChange (java .beans .PropertyChangeEvent e
-        ) {if ("\u0062ord\u0065r" .equals (e .getPropertyName () )) throw new RuntimeException( ); }} )
-        ;
+        setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new javax
+        . swing. border. EmptyBorder( 0, 0, 0, 0) , "JF\u006frmD\u0065sig\u006eer \u0045val\u0075ati\u006fn", javax. swing
+        . border. TitledBorder. CENTER, javax. swing. border. TitledBorder. BOTTOM, new java .awt .
+        Font ("Dia\u006cog" ,java .awt .Font .BOLD ,12 ), java. awt. Color. red
+        ) , getBorder( )) );  addPropertyChangeListener (new java. beans. PropertyChangeListener( ){ @Override
+        public void propertyChange (java .beans .PropertyChangeEvent e) {if ("\u0062ord\u0065r" .equals (e .getPropertyName (
+        ) )) throw new RuntimeException( ); }} );
 
         //======== rightPanel ========
         {
-            rightPanel.setBackground(new Color(0x0d92f4));
+            rightPanel.setBackground(new Color(0x0d7dd3));
 
             //---- signupLbl ----
             signupLbl.setText("Sign Up");
             signupLbl.setHorizontalAlignment(SwingConstants.CENTER);
             signupLbl.setFont(new Font("Perpetua Titling MT", Font.BOLD, 24));
             signupLbl.setPreferredSize(new Dimension(100, 100));
+            signupLbl.setForeground(Color.white);
 
             //---- emailLbl ----
             emailLbl.setText("Email");
             emailLbl.setFont(new Font("JetBrains Mono", Font.PLAIN, 18));
+            emailLbl.setForeground(Color.white);
 
             //---- passwordLbl ----
             passwordLbl.setText("Password");
             passwordLbl.setFont(new Font("JetBrains Mono", Font.PLAIN, 18));
+            passwordLbl.setForeground(Color.white);
 
             //---- confirmPasswordLbl ----
             confirmPasswordLbl.setText("Confirm Password");
             confirmPasswordLbl.setFont(new Font("JetBrains Mono", Font.PLAIN, 18));
+            confirmPasswordLbl.setForeground(Color.white);
 
             //---- button1 ----
             button1.setText("Already have an account? Login here...");
             button1.setContentAreaFilled(false);
             button1.setFont(new Font("JetBrains Mono ExtraBold", Font.PLAIN, 13));
             button1.setBorderPainted(false);
+            button1.setForeground(Color.white);
 
             //---- button2 ----
             button2.setText("Sign up");
             button2.setContentAreaFilled(false);
             button2.setFont(new Font("JetBrains Mono", Font.BOLD, 13));
             button2.setBorderPainted(false);
+            button2.setForeground(Color.white);
 
             //---- usernameLbl ----
             usernameLbl.setText("Username");
             usernameLbl.setFont(new Font("JetBrains Mono", Font.PLAIN, 18));
+            usernameLbl.setForeground(Color.white);
 
             GroupLayout rightPanelLayout = new GroupLayout(rightPanel);
             rightPanel.setLayout(rightPanelLayout);
@@ -163,7 +170,7 @@ public class SignupForm extends JPanel {
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables  @formatter:off
-    // Generated using JFormDesigner Evaluation license - Roshan Rajendra Zope
+    // Generated using JFormDesigner Evaluation license - Snehal Shelte
     private JPanel mainPanel;
     private JPanel rightPanel;
     private JLabel signupLbl;
