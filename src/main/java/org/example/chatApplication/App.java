@@ -37,5 +37,7 @@ public class App extends JFrame {
             frame.setContentPane(SignupForm.getMainPanel());
             frame.setTitle("Login Page");
         });
+
+
     }
 }

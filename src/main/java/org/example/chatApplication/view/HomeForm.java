@@ -19,24 +19,40 @@ public class HomeForm extends JPanel {
 
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents  @formatter:off
-        // Generated using JFormDesigner Evaluation license - Snehal Shelte
+        // Generated using JFormDesigner Evaluation license - Roshan Rajendra Zope
         panel1 = new JPanel();
         label1 = new JLabel();
         usernameLbl = new JLabel();
-        label2 = new JLabel();
-        firstChatLbl = new JLabel();
+        profileImage = new JLabel();
+        contactLbl = new JLabel();
         searchBarTF = new JTextField();
-        label3 = new JLabel();
+        contactImage = new JLabel();
         panel2 = new JPanel();
+        searchBarTF3 = new JTextField();
+        label4 = new JLabel();
+        label5 = new JLabel();
+        button3 = new JButton();
+        button4 = new JButton();
+        button6 = new JButton();
+        scrollPane1 = new JScrollPane();
+        textArea1 = new JTextArea();
+        textArea2 = new JTextArea();
         panel3 = new JPanel();
+        searchBarTF2 = new JTextField();
+        userProfileImage = new JLabel();
+        button1 = new JButton();
+        button2 = new JButton();
+        button5 = new JButton();
 
         //======== this ========
         setPreferredSize(new Dimension(900, 500));
-        setBorder ( new javax . swing. border .CompoundBorder ( new javax . swing. border .TitledBorder ( new javax . swing. border .EmptyBorder (
-        0, 0 ,0 , 0) ,  "JF\u006frmDes\u0069gner \u0045valua\u0074ion" , javax. swing .border . TitledBorder. CENTER ,javax . swing. border .TitledBorder
-        . BOTTOM, new java. awt .Font ( "D\u0069alog", java .awt . Font. BOLD ,12 ) ,java . awt. Color .
-        red ) , getBorder () ) );  addPropertyChangeListener( new java. beans .PropertyChangeListener ( ){ @Override public void propertyChange (java .
-        beans. PropertyChangeEvent e) { if( "\u0062order" .equals ( e. getPropertyName () ) )throw new RuntimeException( ) ;} } );
+        setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new
+        javax. swing. border. EmptyBorder( 0, 0, 0, 0) , "JF\u006frmD\u0065sig\u006eer \u0045val\u0075ati\u006fn", javax
+        . swing. border. TitledBorder. CENTER, javax. swing. border. TitledBorder. BOTTOM, new java
+        .awt .Font ("Dia\u006cog" ,java .awt .Font .BOLD ,12 ), java. awt
+        . Color. red) , getBorder( )) );  addPropertyChangeListener (new java. beans.
+        PropertyChangeListener( ){ @Override public void propertyChange (java .beans .PropertyChangeEvent e) {if ("\u0062ord\u0065r" .
+        equals (e .getPropertyName () )) throw new RuntimeException( ); }} );
 
         //======== panel1 ========
         {
@@ -48,15 +64,15 @@ public class HomeForm extends JPanel {
             usernameLbl.setFont(new Font("Yu Gothic UI Semibold", Font.BOLD, 17));
             usernameLbl.setBorder(new MatteBorder(0, 0, 2, 0, Color.black));
 
-            //---- label2 ----
-            label2.setIcon(new ImageIcon(getClass().getResource("/Images/person_16dp.png")));
+            //---- profileImage ----
+            profileImage.setIcon(new ImageIcon(getClass().getResource("/Images/person_16dp.png")));
 
-            //---- firstChatLbl ----
-            firstChatLbl.setText("Roshan Zope");
-            firstChatLbl.setFont(new Font("Yu Gothic UI Semibold", Font.BOLD, 17));
+            //---- contactLbl ----
+            contactLbl.setText("Roshan Zope");
+            contactLbl.setFont(new Font("Yu Gothic UI Semibold", Font.BOLD, 17));
 
-            //---- label3 ----
-            label3.setText("text");
+            //---- contactImage ----
+            contactImage.setText("image");
 
             GroupLayout panel1Layout = new GroupLayout(panel1);
             panel1.setLayout(panel1Layout);
@@ -67,16 +83,16 @@ public class HomeForm extends JPanel {
                             .addGroup(panel1Layout.createSequentialGroup()
                                 .addGroup(panel1Layout.createParallelGroup()
                                     .addGroup(panel1Layout.createSequentialGroup()
-                                        .addGap(15, 15, 15)
-                                        .addComponent(label2, GroupLayout.PREFERRED_SIZE, 54, GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(panel1Layout.createSequentialGroup()
                                         .addGap(22, 22, 22)
-                                        .addComponent(label3)))
-                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(contactImage))
+                                    .addGroup(panel1Layout.createSequentialGroup()
+                                        .addGap(15, 15, 15)
+                                        .addComponent(profileImage, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)))
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(panel1Layout.createParallelGroup()
                                     .addComponent(usernameLbl, GroupLayout.PREFERRED_SIZE, 173, GroupLayout.PREFERRED_SIZE)
                                     .addGroup(GroupLayout.Alignment.TRAILING, panel1Layout.createSequentialGroup()
-                                        .addComponent(firstChatLbl)
+                                        .addComponent(contactLbl)
                                         .addGap(72, 72, 72))))
                             .addGroup(panel1Layout.createSequentialGroup()
                                 .addContainerGap()
@@ -89,14 +105,14 @@ public class HomeForm extends JPanel {
                     .addGroup(panel1Layout.createSequentialGroup()
                         .addGap(31, 31, 31)
                         .addGroup(panel1Layout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
-                            .addComponent(usernameLbl, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(label2, GroupLayout.PREFERRED_SIZE, 43, GroupLayout.PREFERRED_SIZE))
+                            .addComponent(usernameLbl, GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
+                            .addComponent(profileImage, GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE))
                         .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(searchBarTF, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
                         .addGap(14, 14, 14)
                         .addGroup(panel1Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                            .addComponent(firstChatLbl)
-                            .addComponent(label3))
+                            .addComponent(contactLbl)
+                            .addComponent(contactImage))
                         .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(label1)
                         .addContainerGap(340, Short.MAX_VALUE))
@@ -105,16 +121,93 @@ public class HomeForm extends JPanel {
 
         //======== panel2 ========
         {
+            panel2.setBackground(Color.white);
+
+            //---- searchBarTF3 ----
+            searchBarTF3.setBorder(new LineBorder(Color.black, 5, true));
+
+            //---- label4 ----
+            label4.setText("text");
+            label4.setHorizontalAlignment(SwingConstants.CENTER);
+
+            //---- label5 ----
+            label5.setText("Roshan Zope");
+            label5.setBorder(new MatteBorder(0, 0, 1, 0, Color.black));
+
+            //---- button3 ----
+            button3.setText("C");
+
+            //---- button4 ----
+            button4.setText("VC");
+
+            //---- button6 ----
+            button6.setText("M");
+
+            //======== scrollPane1 ========
+            {
+
+                //---- textArea1 ----
+                textArea1.setText("Tu mere se pyaar karta hai ki nhi?");
+                textArea1.setEditable(false);
+                textArea1.setLineWrap(true);
+                textArea1.setBorder(new MatteBorder(1, 1, 1, 1, Color.black));
+                scrollPane1.setViewportView(textArea1);
+            }
+
+            //---- textArea2 ----
+            textArea2.setText("Ha, karta hu..");
+            textArea2.setEditable(false);
+            textArea2.setLineWrap(true);
+            textArea2.setBorder(new MatteBorder(1, 1, 1, 1, Color.black));
 
             GroupLayout panel2Layout = new GroupLayout(panel2);
             panel2.setLayout(panel2Layout);
             panel2Layout.setHorizontalGroup(
                 panel2Layout.createParallelGroup()
-                    .addGap(0, 399, Short.MAX_VALUE)
+                    .addGroup(panel2Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(panel2Layout.createParallelGroup()
+                            .addGroup(panel2Layout.createSequentialGroup()
+                                .addComponent(searchBarTF3, GroupLayout.PREFERRED_SIZE, 363, GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(GroupLayout.Alignment.TRAILING, panel2Layout.createSequentialGroup()
+                                .addGroup(panel2Layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+                                    .addGroup(panel2Layout.createSequentialGroup()
+                                        .addGap(0, 184, Short.MAX_VALUE)
+                                        .addComponent(scrollPane1, GroupLayout.PREFERRED_SIZE, 164, GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(panel2Layout.createSequentialGroup()
+                                        .addComponent(label4, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(label5, GroupLayout.PREFERRED_SIZE, 132, GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                                        .addComponent(button3, GroupLayout.PREFERRED_SIZE, 35, GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(button4, GroupLayout.PREFERRED_SIZE, 34, GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(button6, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)))
+                                .addGap(21, 21, 21))))
+                    .addGroup(panel2Layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addComponent(textArea2, GroupLayout.PREFERRED_SIZE, 162, GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 198, Short.MAX_VALUE))
             );
             panel2Layout.setVerticalGroup(
                 panel2Layout.createParallelGroup()
-                    .addGap(0, 500, Short.MAX_VALUE)
+                    .addGroup(GroupLayout.Alignment.TRAILING, panel2Layout.createSequentialGroup()
+                        .addGap(23, 23, 23)
+                        .addGroup(panel2Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                            .addComponent(label4, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
+                            .addComponent(label5, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
+                            .addComponent(button3, GroupLayout.PREFERRED_SIZE, 41, GroupLayout.PREFERRED_SIZE)
+                            .addComponent(button4, GroupLayout.PREFERRED_SIZE, 41, GroupLayout.PREFERRED_SIZE)
+                            .addComponent(button6, GroupLayout.PREFERRED_SIZE, 41, GroupLayout.PREFERRED_SIZE))
+                        .addGap(32, 32, 32)
+                        .addComponent(scrollPane1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                        .addGap(9, 9, 9)
+                        .addComponent(textArea2, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 257, Short.MAX_VALUE)
+                        .addComponent(searchBarTF3, GroupLayout.PREFERRED_SIZE, 47, GroupLayout.PREFERRED_SIZE)
+                        .addGap(21, 21, 21))
             );
         }
 
@@ -122,15 +215,47 @@ public class HomeForm extends JPanel {
         {
             panel3.setBackground(new Color(0xeeeeee));
 
+            //---- userProfileImage ----
+            userProfileImage.setText("image");
+            userProfileImage.setHorizontalAlignment(SwingConstants.CENTER);
+
+            //---- button1 ----
+            button1.setText("text");
+
+            //---- button2 ----
+            button2.setText("text");
+
             GroupLayout panel3Layout = new GroupLayout(panel3);
             panel3.setLayout(panel3Layout);
             panel3Layout.setHorizontalGroup(
                 panel3Layout.createParallelGroup()
-                    .addGap(0, 223, Short.MAX_VALUE)
+                    .addGroup(GroupLayout.Alignment.TRAILING, panel3Layout.createSequentialGroup()
+                        .addContainerGap(50, Short.MAX_VALUE)
+                        .addGroup(panel3Layout.createParallelGroup()
+                            .addGroup(GroupLayout.Alignment.TRAILING, panel3Layout.createSequentialGroup()
+                                .addComponent(userProfileImage, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
+                                .addGap(57, 57, 57))
+                            .addGroup(GroupLayout.Alignment.TRAILING, panel3Layout.createSequentialGroup()
+                                .addGroup(panel3Layout.createParallelGroup(GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(panel3Layout.createSequentialGroup()
+                                        .addComponent(button1)
+                                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(button2, GroupLayout.PREFERRED_SIZE, 75, GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(searchBarTF2, GroupLayout.PREFERRED_SIZE, 176, GroupLayout.PREFERRED_SIZE))
+                                .addGap(21, 21, 21))))
             );
             panel3Layout.setVerticalGroup(
                 panel3Layout.createParallelGroup()
-                    .addGap(0, 500, Short.MAX_VALUE)
+                    .addGroup(panel3Layout.createSequentialGroup()
+                        .addGap(16, 16, 16)
+                        .addComponent(searchBarTF2, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+                        .addGap(48, 48, 48)
+                        .addComponent(userProfileImage, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(panel3Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                            .addComponent(button1)
+                            .addComponent(button2))
+                        .addContainerGap(262, Short.MAX_VALUE))
             );
         }
 
@@ -152,19 +277,36 @@ public class HomeForm extends JPanel {
                 .addComponent(panel2, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(panel3, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
+
+        //---- button5 ----
+        button5.setText("C");
         // JFormDesigner - End of component initialization  //GEN-END:initComponents  @formatter:on
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables  @formatter:off
-    // Generated using JFormDesigner Evaluation license - Snehal Shelte
+    // Generated using JFormDesigner Evaluation license - Roshan Rajendra Zope
     private JPanel panel1;
     private JLabel label1;
     private JLabel usernameLbl;
-    private JLabel label2;
-    private JLabel firstChatLbl;
+    private JLabel profileImage;
+    private JLabel contactLbl;
     private JTextField searchBarTF;
-    private JLabel label3;
+    private JLabel contactImage;
     private JPanel panel2;
+    private JTextField searchBarTF3;
+    private JLabel label4;
+    private JLabel label5;
+    private JButton button3;
+    private JButton button4;
+    private JButton button6;
+    private JScrollPane scrollPane1;
+    private JTextArea textArea1;
+    private JTextArea textArea2;
     private JPanel panel3;
+    private JTextField searchBarTF2;
+    private JLabel userProfileImage;
+    private JButton button1;
+    private JButton button2;
+    private JButton button5;
     // JFormDesigner - End of variables declaration  //GEN-END:variables  @formatter:on
 }
