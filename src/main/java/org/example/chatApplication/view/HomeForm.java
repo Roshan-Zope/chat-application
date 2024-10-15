@@ -42,17 +42,15 @@ public class HomeForm extends JPanel {
         userProfileImage = new JLabel();
         button1 = new JButton();
         button2 = new JButton();
-        button5 = new JButton();
 
         //======== this ========
         setPreferredSize(new Dimension(900, 500));
-        setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new
-        javax. swing. border. EmptyBorder( 0, 0, 0, 0) , "JF\u006frmD\u0065sig\u006eer \u0045val\u0075ati\u006fn", javax
-        . swing. border. TitledBorder. CENTER, javax. swing. border. TitledBorder. BOTTOM, new java
-        .awt .Font ("Dia\u006cog" ,java .awt .Font .BOLD ,12 ), java. awt
-        . Color. red) , getBorder( )) );  addPropertyChangeListener (new java. beans.
-        PropertyChangeListener( ){ @Override public void propertyChange (java .beans .PropertyChangeEvent e) {if ("\u0062ord\u0065r" .
-        equals (e .getPropertyName () )) throw new RuntimeException( ); }} );
+        setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new javax. swing.
+        border. EmptyBorder( 0, 0, 0, 0) , "JFor\u006dDesi\u0067ner \u0045valu\u0061tion", javax. swing. border. TitledBorder. CENTER
+        , javax. swing. border. TitledBorder. BOTTOM, new java .awt .Font ("Dia\u006cog" ,java .awt .Font
+        .BOLD ,12 ), java. awt. Color. red) , getBorder( )) );  addPropertyChangeListener (
+        new java. beans. PropertyChangeListener( ){ @Override public void propertyChange (java .beans .PropertyChangeEvent e) {if ("bord\u0065r"
+        .equals (e .getPropertyName () )) throw new RuntimeException( ); }} );
 
         //======== panel1 ========
         {
@@ -115,7 +113,7 @@ public class HomeForm extends JPanel {
                             .addComponent(contactImage))
                         .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(label1)
-                        .addContainerGap(340, Short.MAX_VALUE))
+                        .addContainerGap(345, Short.MAX_VALUE))
             );
         }
 
@@ -205,7 +203,7 @@ public class HomeForm extends JPanel {
                         .addComponent(scrollPane1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                         .addGap(9, 9, 9)
                         .addComponent(textArea2, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 257, Short.MAX_VALUE)
+                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 262, Short.MAX_VALUE)
                         .addComponent(searchBarTF3, GroupLayout.PREFERRED_SIZE, 47, GroupLayout.PREFERRED_SIZE)
                         .addGap(21, 21, 21))
             );
@@ -255,7 +253,7 @@ public class HomeForm extends JPanel {
                         .addGroup(panel3Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                             .addComponent(button1)
                             .addComponent(button2))
-                        .addContainerGap(262, Short.MAX_VALUE))
+                        .addContainerGap(261, Short.MAX_VALUE))
             );
         }
 
@@ -273,13 +271,12 @@ public class HomeForm extends JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup()
-                .addComponent(panel1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(panel1, GroupLayout.DEFAULT_SIZE, 505, Short.MAX_VALUE)
                 .addComponent(panel2, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(panel3, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                    .addComponent(panel3, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap())
         );
-
-        //---- button5 ----
-        button5.setText("C");
         // JFormDesigner - End of component initialization  //GEN-END:initComponents  @formatter:on
     }
 
@@ -307,6 +304,5 @@ public class HomeForm extends JPanel {
     private JLabel userProfileImage;
     private JButton button1;
     private JButton button2;
-    private JButton button5;
     // JFormDesigner - End of variables declaration  //GEN-END:variables  @formatter:on
 }
