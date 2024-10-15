@@ -15,7 +15,7 @@ new FormModel {
 			} ) {
 				name: "panel1"
 				"preferredSize": new java.awt.Dimension( 260, 500 )
-				"background": new java.awt.Color( 255, 95, 109, 255 )
+				"background": new java.awt.Color( 238, 238, 238, 255 )
 				add( new FormComponent( "javax.swing.JLabel" ) {
 					name: "label1"
 				} )
@@ -53,6 +53,7 @@ new FormModel {
 				"$verticalGroup": "par l {space :0:500:x}"
 			} ) {
 				name: "panel3"
+				"background": new java.awt.Color( 238, 238, 238, 255 )
 			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 0, 0 )
@@ -60,20 +61,3 @@ new FormModel {
 		} )
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
