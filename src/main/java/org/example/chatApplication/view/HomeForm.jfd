@@ -44,7 +44,7 @@ new FormModel {
 			} )
 			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
 				"$horizontalGroup": "par l {seq {space :::p, par l {seq l {comp searchBarTF3:::p:363:p, space :19::x}, seq t {par t {seq {space :0:184:x, comp scrollPane1:::p:164:p}, seq {comp label4:::p:40:p, space s:::p, comp label5:::p:132:p, space ::41:x, comp button3:::p:35:p, space :::p, comp button4:::p:34:p, space :::p, comp button6:::p:36:p}}, space :p:21:p}}}, seq l {space :p:15:p, comp textArea2:::p:162:p, space :0:198:x}}"
-				"$verticalGroup": "par l {seq t {space :p:23:p, par b {comp label4::b:p:40:p, comp label5::b:p:40:p, comp button3::b:p:41:p, comp button4::b:p:41:p, comp button6::b:p:41:p}, space :p:32:p, comp scrollPane1:::p::p, space :p:9:p, comp textArea2:::p:30:p, space ::257:x, comp searchBarTF3:::p:47:p, space :p:21:p}}"
+				"$verticalGroup": "par l {seq t {space :p:23:p, par b {comp label4::b:p:40:p, comp label5::b:p:40:p, comp button3::b:p:41:p, comp button4::b:p:41:p, comp button6::b:p:41:p}, space :p:32:p, comp scrollPane1:::p::p, space :p:9:p, comp textArea2:::p:30:p, space ::224:x, comp searchBarTF3:::p:47:p, space :p:21:p}}"
 			} ) {
 				name: "panel2"
 				"background": new java.awt.Color( 255, 255, 255, 255 )
@@ -93,8 +93,8 @@ new FormModel {
 				} )
 			} )
 			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-				"$horizontalGroup": "par l {seq t {space ::50:x, par l {seq t {comp userProfileImage:::p:100:p, space :p:57:p}, seq t {par t:::p {seq {comp button1:::p::p, space :::x, comp button2:::p:75:p}, comp searchBarTF2:::p:176:p}, space :p:21:p}}}}"
-				"$verticalGroup": "par l {seq l {space :p:16:p, comp searchBarTF2:::p:30:p, space :p:48:p, comp userProfileImage:::p:100:p, space u:::p, par b {comp button1::b:p::p, comp button2::b:p::p}, space ::262:x}}"
+				"$horizontalGroup": "par l {seq l {space :p:35:p, comp searchBarTF2:::p:176:p, space :0:36:x}, seq {par l {seq l {space :p:40:p, comp button7:::p:75:p, space s:::p, comp button2:::p:75:p}, seq l {space :p:69:p, comp userProfileImage:::p:100:p}}, space ::39:x}}"
+				"$verticalGroup": "par l {seq l {space :p:17:p, comp searchBarTF2:::p:30:p, space :p:47:p, comp userProfileImage:::p:100:p, space u:::p, par b {comp button2::b:p::p, comp button7::b:p::p}, space ::256:x}}"
 			} ) {
 				name: "panel3"
 				"background": new java.awt.Color( 238, 238, 238, 255 )
@@ -107,17 +107,17 @@ new FormModel {
 					"horizontalAlignment": 0
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
-					name: "button1"
+					name: "button2"
 					"text": "text"
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
-					name: "button2"
+					name: "button7"
 					"text": "text"
 				} )
 			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 0, 0 )
-			"size": new java.awt.Dimension( 900, 500 )
+			"size": new java.awt.Dimension( 720, 400 )
 		} )
 		add( new FormComponent( "javax.swing.JButton" ) {
 			name: "button5"
