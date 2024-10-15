@@ -4,14 +4,14 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {comp mainPanel::l::950:x}"
-			"$verticalGroup": "par l {comp mainPanel::t::550:x}"
+			"$horizontalGroup": "par l {comp mainPanel::l:::x}"
+			"$verticalGroup": "par l {comp mainPanel::l:::x}"
 		} ) {
 			name: "this"
 			"preferredSize": new java.awt.Dimension( 900, 500 )
 			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-				"$horizontalGroup": "par l {seq l {comp leftPanel:::p:320:p, space :::p, comp rightPanel::::618:x, space :::p}}"
-				"$verticalGroup": "par l {seq l {par l {comp leftPanel::::548:x, comp rightPanel::::548:x}, space :p:2:p}}"
+				"$horizontalGroup": "par l {seq l {space :::x, comp leftPanel:::p::p, space :::p, comp rightPanel:::p::p, space :::p}}"
+				"$verticalGroup": "par l {seq l {comp rightPanel::::510:x, space :p:2:p}, seq l {space :::p, comp leftPanel:::p::p, space :::x}}"
 			} ) {
 				name: "mainPanel"
 				"preferredSize": new java.awt.Dimension( 900, 500 )
@@ -20,24 +20,29 @@ new FormModel {
 				"minimumSize": new java.awt.Dimension( 900, 500 )
 				"maximumSize": new java.awt.Dimension( 900, 500 )
 				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-					"$horizontalGroup": "par l {space :0:0:x}"
-					"$verticalGroup": "par l {space :0:548:x}"
+					"$horizontalGroup": "par l {comp loginImage::t::360:x}"
+					"$verticalGroup": "par l {seq t {space :0:0:x, comp loginImage:::p:502:p}}"
 				} ) {
 					name: "leftPanel"
 					"preferredSize": new java.awt.Dimension( 360, 500 )
 					"background": new java.awt.Color( 0, 0, 0, 0 )
 					"minimumSize": new java.awt.Dimension( 360, 500 )
+					add( new FormComponent( "javax.swing.JLabel" ) {
+						name: "loginImage"
+						"horizontalAlignment": 0
+						"icon": new com.jformdesigner.model.SwingIcon( 0, "/Images/file.png" )
+					} )
 				} )
 				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-					"$horizontalGroup": "par l {seq t {space :0:241:x, comp LoginLbl:::p:144:p, space :p:233:p}, seq {par l {seq l {space :p:70:p, par l {comp passwordLbl::l:p:114:p, comp emailLbl::l:p:114:p, comp emailTF::l:p:360:p, comp passwordPF::l:p:360:p}}, seq l {space :p:169:p, comp forgotPasswordBtn:::p::p}, seq l {space :p:96:p, comp signupLink:::p::p}, seq l {space :p:192:p, comp loginBtn:::p:220:p}}, space ::188:x}}"
-					"$verticalGroup": "par l {seq l {space :p:34:p, comp LoginLbl:::p:55:p, space :p:43:p, comp emailLbl:::p:36:p, space :::p, comp emailTF:::p::p, space :p:18:p, comp passwordLbl:::p:36:p, space :::p, comp passwordPF:::p::p, space :p:12:p, comp forgotPasswordBtn:::p::p, space :::p, comp signupLink:::p::p, space :p:32:p, comp loginBtn:::p:60:p, space ::52:x}}"
+					"$horizontalGroup": "par l {seq {par l {seq l {space :p:134:p, comp passwordLbl:::p:114:p}, seq l {space :p:133:p, comp emailLbl:::p:114:p}}, space :::x}, seq t {space :::x, par l {seq t {comp loginLbl:::p:144:p, space :p:182:p}, seq t {comp forgotPasswordBtn:::p::p, space :p:176:p}}}, seq t {space :0:96:x, par l {seq t {par t {comp passwordPF:::p:360:p, comp emailTF:::p:360:p, comp signupLink::t:p::p}, space :p:84:p}, seq t {comp loginBtn:::p:220:p, space :p:138:p}}}}"
+					"$verticalGroup": "par l {seq l {space :p:34:p, comp loginLbl:::p:55:p, space :p:37:p, comp emailLbl:::p:36:p, space u:::p, comp emailTF:::p::p, space :p:18:p, comp passwordLbl:::p:36:p, space :::p, comp passwordPF:::p::p, space u:::p, comp forgotPasswordBtn:::p::p, space :::p, comp signupLink:::p::p, space u:::p, comp loginBtn:::p:60:p, space ::46:x}}"
 				} ) {
 					name: "rightPanel"
 					"preferredSize": new java.awt.Dimension( 540, 500 )
 					"background": new java.awt.Color( 13, 125, 211, 255 )
 					"minimumSize": new java.awt.Dimension( 540, 500 )
 					add( new FormComponent( "javax.swing.JLabel" ) {
-						name: "LoginLbl"
+						name: "loginLbl"
 						"text": "Login"
 						"horizontalAlignment": 0
 						"font": new java.awt.Font( "Perpetua Titling MT", 1, 24 )
@@ -86,14 +91,13 @@ new FormModel {
 						"text": "Login"
 						"font": new java.awt.Font( "JetBrains Mono ExtraBold", 1, 22 )
 						"background": new java.awt.Color( 255, 255, 255, 255 )
-						"borderPainted": false
 						"opaque": false
 					} )
 				} )
 			} )
 		}, new FormLayoutConstraints( null ) {
 			"location": new java.awt.Point( 0, 0 )
-			"size": new java.awt.Dimension( 760, 440 )
+			"size": new java.awt.Dimension( 900, 500 )
 		} )
 	}
 }

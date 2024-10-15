@@ -22,11 +22,12 @@ public class LoginForm extends JPanel {
     }
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents  @formatter:off
-        // Generated using JFormDesigner Evaluation license - Snehal Shelte
+        // Generated using JFormDesigner Evaluation license - Roshan Rajendra Zope
         mainPanel = new JPanel();
         leftPanel = new JPanel();
+        loginImage = new JLabel();
         rightPanel = new JPanel();
-        LoginLbl = new JLabel();
+        loginLbl = new JLabel();
         emailLbl = new JLabel();
         emailTF = new JTextField();
         passwordLbl = new JLabel();
@@ -37,13 +38,12 @@ public class LoginForm extends JPanel {
 
         //======== this ========
         setPreferredSize(new Dimension(900, 500));
-        setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new javax
-        . swing. border. EmptyBorder( 0, 0, 0, 0) , "JF\u006frmDesi\u0067ner Ev\u0061luatio\u006e", javax. swing
-        . border. TitledBorder. CENTER, javax. swing. border. TitledBorder. BOTTOM, new java .awt .
-        Font ("Dialo\u0067" ,java .awt .Font .BOLD ,12 ), java. awt. Color. red
-        ) , getBorder( )) );  addPropertyChangeListener (new java. beans. PropertyChangeListener( ){ @Override
-        public void propertyChange (java .beans .PropertyChangeEvent e) {if ("borde\u0072" .equals (e .getPropertyName (
-        ) )) throw new RuntimeException( ); }} );
+        setBorder(new javax.swing.border.CompoundBorder(new javax.swing.border.TitledBorder(new javax.swing.
+        border.EmptyBorder(0,0,0,0), "JF\u006frmD\u0065sig\u006eer \u0045val\u0075ati\u006fn",javax.swing.border.TitledBorder.CENTER
+        ,javax.swing.border.TitledBorder.BOTTOM,new java.awt.Font("Dia\u006cog",java.awt.Font
+        .BOLD,12),java.awt.Color.red), getBorder())); addPropertyChangeListener(
+        new java.beans.PropertyChangeListener(){@Override public void propertyChange(java.beans.PropertyChangeEvent e){if("\u0062ord\u0065r"
+        .equals(e.getPropertyName()))throw new RuntimeException();}});
 
         //======== mainPanel ========
         {
@@ -59,15 +59,21 @@ public class LoginForm extends JPanel {
                 leftPanel.setBackground(new Color(0x00000000, true));
                 leftPanel.setMinimumSize(new Dimension(360, 500));
 
+                //---- loginImage ----
+                loginImage.setHorizontalAlignment(SwingConstants.CENTER);
+                loginImage.setIcon(new ImageIcon(getClass().getResource("/Images/file.png")));
+
                 GroupLayout leftPanelLayout = new GroupLayout(leftPanel);
                 leftPanel.setLayout(leftPanelLayout);
                 leftPanelLayout.setHorizontalGroup(
                     leftPanelLayout.createParallelGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(loginImage, GroupLayout.Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
                 );
                 leftPanelLayout.setVerticalGroup(
                     leftPanelLayout.createParallelGroup()
-                        .addGap(0, 548, Short.MAX_VALUE)
+                        .addGroup(GroupLayout.Alignment.TRAILING, leftPanelLayout.createSequentialGroup()
+                            .addGap(0, 0, Short.MAX_VALUE)
+                            .addComponent(loginImage, GroupLayout.PREFERRED_SIZE, 502, GroupLayout.PREFERRED_SIZE))
                 );
             }
 
@@ -77,11 +83,11 @@ public class LoginForm extends JPanel {
                 rightPanel.setBackground(new Color(0x0d7dd3));
                 rightPanel.setMinimumSize(new Dimension(540, 500));
 
-                //---- LoginLbl ----
-                LoginLbl.setText("Login");
-                LoginLbl.setHorizontalAlignment(SwingConstants.CENTER);
-                LoginLbl.setFont(new Font("Perpetua Titling MT", Font.BOLD, 24));
-                LoginLbl.setForeground(Color.white);
+                //---- loginLbl ----
+                loginLbl.setText("Login");
+                loginLbl.setHorizontalAlignment(SwingConstants.CENTER);
+                loginLbl.setFont(new Font("Perpetua Titling MT", Font.BOLD, 24));
+                loginLbl.setForeground(Color.white);
 
                 //---- emailLbl ----
                 emailLbl.setFont(new Font("JetBrains Mono", Font.PLAIN, 18));
@@ -115,57 +121,63 @@ public class LoginForm extends JPanel {
                 loginBtn.setText("Login");
                 loginBtn.setFont(new Font("JetBrains Mono ExtraBold", Font.BOLD, 22));
                 loginBtn.setBackground(Color.white);
-                loginBtn.setBorderPainted(false);
                 loginBtn.setOpaque(false);
 
                 GroupLayout rightPanelLayout = new GroupLayout(rightPanel);
                 rightPanel.setLayout(rightPanelLayout);
                 rightPanelLayout.setHorizontalGroup(
                     rightPanelLayout.createParallelGroup()
-                        .addGroup(GroupLayout.Alignment.TRAILING, rightPanelLayout.createSequentialGroup()
-                            .addGap(0, 241, Short.MAX_VALUE)
-                            .addComponent(LoginLbl, GroupLayout.PREFERRED_SIZE, 144, GroupLayout.PREFERRED_SIZE)
-                            .addGap(233, 233, 233))
                         .addGroup(rightPanelLayout.createSequentialGroup()
                             .addGroup(rightPanelLayout.createParallelGroup()
                                 .addGroup(rightPanelLayout.createSequentialGroup()
-                                    .addGap(70, 70, 70)
-                                    .addGroup(rightPanelLayout.createParallelGroup()
-                                        .addComponent(passwordLbl, GroupLayout.PREFERRED_SIZE, 114, GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(emailLbl, GroupLayout.PREFERRED_SIZE, 114, GroupLayout.PREFERRED_SIZE)
+                                    .addGap(134, 134, 134)
+                                    .addComponent(passwordLbl, GroupLayout.PREFERRED_SIZE, 114, GroupLayout.PREFERRED_SIZE))
+                                .addGroup(rightPanelLayout.createSequentialGroup()
+                                    .addGap(133, 133, 133)
+                                    .addComponent(emailLbl, GroupLayout.PREFERRED_SIZE, 114, GroupLayout.PREFERRED_SIZE)))
+                            .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(GroupLayout.Alignment.TRAILING, rightPanelLayout.createSequentialGroup()
+                            .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(rightPanelLayout.createParallelGroup()
+                                .addGroup(GroupLayout.Alignment.TRAILING, rightPanelLayout.createSequentialGroup()
+                                    .addComponent(loginLbl, GroupLayout.PREFERRED_SIZE, 144, GroupLayout.PREFERRED_SIZE)
+                                    .addGap(182, 182, 182))
+                                .addGroup(GroupLayout.Alignment.TRAILING, rightPanelLayout.createSequentialGroup()
+                                    .addComponent(forgotPasswordBtn)
+                                    .addGap(176, 176, 176))))
+                        .addGroup(GroupLayout.Alignment.TRAILING, rightPanelLayout.createSequentialGroup()
+                            .addGap(0, 96, Short.MAX_VALUE)
+                            .addGroup(rightPanelLayout.createParallelGroup()
+                                .addGroup(GroupLayout.Alignment.TRAILING, rightPanelLayout.createSequentialGroup()
+                                    .addGroup(rightPanelLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+                                        .addComponent(passwordPF, GroupLayout.PREFERRED_SIZE, 360, GroupLayout.PREFERRED_SIZE)
                                         .addComponent(emailTF, GroupLayout.PREFERRED_SIZE, 360, GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(passwordPF, GroupLayout.PREFERRED_SIZE, 360, GroupLayout.PREFERRED_SIZE)))
-                                .addGroup(rightPanelLayout.createSequentialGroup()
-                                    .addGap(169, 169, 169)
-                                    .addComponent(forgotPasswordBtn))
-                                .addGroup(rightPanelLayout.createSequentialGroup()
-                                    .addGap(96, 96, 96)
-                                    .addComponent(signupLink))
-                                .addGroup(rightPanelLayout.createSequentialGroup()
-                                    .addGap(192, 192, 192)
-                                    .addComponent(loginBtn, GroupLayout.PREFERRED_SIZE, 220, GroupLayout.PREFERRED_SIZE)))
-                            .addContainerGap(188, Short.MAX_VALUE))
+                                        .addComponent(signupLink))
+                                    .addGap(84, 84, 84))
+                                .addGroup(GroupLayout.Alignment.TRAILING, rightPanelLayout.createSequentialGroup()
+                                    .addComponent(loginBtn, GroupLayout.PREFERRED_SIZE, 220, GroupLayout.PREFERRED_SIZE)
+                                    .addGap(138, 138, 138))))
                 );
                 rightPanelLayout.setVerticalGroup(
                     rightPanelLayout.createParallelGroup()
                         .addGroup(rightPanelLayout.createSequentialGroup()
                             .addGap(34, 34, 34)
-                            .addComponent(LoginLbl, GroupLayout.PREFERRED_SIZE, 55, GroupLayout.PREFERRED_SIZE)
-                            .addGap(43, 43, 43)
+                            .addComponent(loginLbl, GroupLayout.PREFERRED_SIZE, 55, GroupLayout.PREFERRED_SIZE)
+                            .addGap(37, 37, 37)
                             .addComponent(emailLbl, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                            .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                             .addComponent(emailTF, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                             .addGap(18, 18, 18)
                             .addComponent(passwordLbl, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(passwordPF, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                            .addGap(12, 12, 12)
+                            .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                             .addComponent(forgotPasswordBtn)
                             .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(signupLink)
-                            .addGap(32, 32, 32)
+                            .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                             .addComponent(loginBtn, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
-                            .addContainerGap(52, Short.MAX_VALUE))
+                            .addContainerGap(46, Short.MAX_VALUE))
                 );
             }
 
@@ -174,18 +186,21 @@ public class LoginForm extends JPanel {
             mainPanelLayout.setHorizontalGroup(
                 mainPanelLayout.createParallelGroup()
                     .addGroup(mainPanelLayout.createSequentialGroup()
-                        .addComponent(leftPanel, GroupLayout.PREFERRED_SIZE, 320, GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(leftPanel, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rightPanel, GroupLayout.DEFAULT_SIZE, 618, Short.MAX_VALUE)
+                        .addComponent(rightPanel, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                         .addContainerGap())
             );
             mainPanelLayout.setVerticalGroup(
                 mainPanelLayout.createParallelGroup()
                     .addGroup(mainPanelLayout.createSequentialGroup()
-                        .addGroup(mainPanelLayout.createParallelGroup()
-                            .addComponent(leftPanel, GroupLayout.DEFAULT_SIZE, 548, Short.MAX_VALUE)
-                            .addComponent(rightPanel, GroupLayout.DEFAULT_SIZE, 548, Short.MAX_VALUE))
+                        .addComponent(rightPanel, GroupLayout.DEFAULT_SIZE, 510, Short.MAX_VALUE)
                         .addGap(2, 2, 2))
+                    .addGroup(mainPanelLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(leftPanel, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             );
         }
 
@@ -193,21 +208,22 @@ public class LoginForm extends JPanel {
         setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup()
-                .addComponent(mainPanel, GroupLayout.DEFAULT_SIZE, 950, Short.MAX_VALUE)
+                .addComponent(mainPanel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup()
-                .addComponent(mainPanel, GroupLayout.Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 550, Short.MAX_VALUE)
+                .addComponent(mainPanel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         // JFormDesigner - End of component initialization  //GEN-END:initComponents  @formatter:on
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables  @formatter:off
-    // Generated using JFormDesigner Evaluation license - Snehal Shelte
+    // Generated using JFormDesigner Evaluation license - Roshan Rajendra Zope
     private JPanel mainPanel;
     private JPanel leftPanel;
+    private JLabel loginImage;
     private JPanel rightPanel;
-    private JLabel LoginLbl;
+    private JLabel loginLbl;
     private JLabel emailLbl;
     private JTextField emailTF;
     private JLabel passwordLbl;

@@ -4,8 +4,8 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {seq l {space :p:377:p, comp rightPanel:::p::p, space ::60:x}}"
-			"$verticalGroup": "par l {comp rightPanel::l:::x}"
+			"$horizontalGroup": "par l {seq l {comp leftPanel:::p::p, space :::x, comp rightPanel:::p::p, space :::p}}"
+			"$verticalGroup": "par l {seq l {par l {comp rightPanel::::0:x, seq {comp leftPanel:::p::p, space :0:0:x}}, space :0:0:x}}"
 		} ) {
 			name: "this"
 			"preferredSize": new java.awt.Dimension( 900, 500 )
@@ -13,8 +13,8 @@ new FormModel {
 				"JavaCodeGenerator.variableName": "mainPanel"
 			}
 			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-				"$horizontalGroup": "par l {seq {par l {seq l {space :p:208:p, comp signupLbl:::p:131:p}, seq l {space :p:204:p, comp button2:::p::p}, seq {space :p:82:p, comp button1:::p::p}, seq {space :p:70:p, par t {comp confirmPasswordPF:::p:360:p, par l:t {seq l {space :p:8:p, comp confirmPasswordLbl:::p::p}, par l:l::p {comp passwordPF::::360:x, comp passwordLbl::l:p::p}, comp emailLbl::l:p::p, comp emailTF::l:p:360:p, comp usernameLbl::l:p::p, comp usernameTF::l:p:360:p}}}}, space ::258:x}}"
-				"$verticalGroup": "par l {seq l {space :p:38:p, comp signupLbl:::p:45:p, space s:::p, comp emailLbl:::p::p, space u:::p, comp emailTF:::p::p, space u:::p, comp usernameLbl:::p::p, space :p:10:p, comp usernameTF:::p::p, space u:::p, comp passwordLbl:::p::p, space :::p, comp passwordPF:::p::p, space s:::p, comp confirmPasswordLbl:::p::p, space u:::p, comp confirmPasswordPF:::p::p, space s:::p, comp button1:::p::p, space s:::p, comp button2:::p::p, space ::78:x}}"
+				"$horizontalGroup": "par l {seq {par l {seq l {space :p:70:p, par l {comp usernameLbl::l:p::p, comp passwordLbl::l:p::p, comp emailLbl:::p::p, comp confirmPasswordLbl::l:p::p, comp confirmPasswordPF::l:p:360:p, comp passwordPF::l:p:360:p, comp usernameTF::l:p:360:p, comp emailTF::l:p:360:p}}, seq l {space :p:208:p, comp signupLbl:::p:131:p}, seq l {space :p:95:p, comp loginLinkBtn:::p::p}, seq l {space :p:204:p, par l {comp signupBtn:::p:116:p, comp button2:::p::p}}}, space ::110:x}}"
+				"$verticalGroup": "par l {seq l {space :p:38:p, comp signupLbl:::p:45:p, space s:::p, comp emailLbl:::p::p, space :::p, comp emailTF:::p::p, space :p:4:p, comp usernameLbl:::p::p, space :::p, comp usernameTF:::p::p, space :::p, comp passwordLbl:::p::p, space u:::p, comp passwordPF:::p::p, space :::p, comp confirmPasswordLbl:::p::p, space :::p, comp confirmPasswordPF:::p::p, space :::p, comp loginLinkBtn:::p::p, space :::p, comp signupBtn:::p:52:p, space :p:62:p, comp button2:::p::p, space :::x}}"
 			} ) {
 				name: "rightPanel"
 				"background": new java.awt.Color( 13, 125, 211, 255 )
@@ -54,7 +54,7 @@ new FormModel {
 					name: "confirmPasswordPF"
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
-					name: "button1"
+					name: "loginLinkBtn"
 					"text": "Already have an account? Login here..."
 					"contentAreaFilled": false
 					"font": new java.awt.Font( "JetBrains Mono ExtraBold", 0, 13 )
@@ -77,6 +77,22 @@ new FormModel {
 				} )
 				add( new FormComponent( "javax.swing.JTextField" ) {
 					name: "usernameTF"
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "signupBtn"
+					"text": "Sign Up"
+					"background": new java.awt.Color( 255, 255, 255, 255 )
+				} )
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+				"$horizontalGroup": "par l {comp signupImage::l::360:x}"
+				"$verticalGroup": "par l {comp signupImage::l::500:x}"
+			} ) {
+				name: "leftPanel"
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "signupImage"
+					"horizontalAlignment": 0
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/Images/file1.png" )
 				} )
 			} )
 		}, new FormLayoutConstraints( null ) {
