@@ -25,6 +25,11 @@ public class App extends JFrame {
         FlatRobotoFont.install();
         FlatLaf.registerCustomDefaultsSource("themes");
         UIManager.put("defaultFont", new Font(FlatRobotoFont.FAMILY, Font.PLAIN, 13));
+        try {
+            UIManager.setLookAndFeel(new com.formdev.flatlaf.FlatLightLaf());
+        } catch (UnsupportedLookAndFeelException e) {
+            System.out.println(e.getMessage());
+        }
         FlatMacDarkLaf.setup();
 
         SwingUtilities.invokeLater(() -> {

@@ -5,6 +5,8 @@
 package org.example.chatApplication.view;
 
 import java.awt.*;
+import java.awt.geom.Ellipse2D;
+import java.awt.image.BufferedImage;
 import javax.swing.*;
 import javax.swing.GroupLayout;
 
@@ -18,6 +20,14 @@ public class SignupForm extends JPanel {
 
     public static JPanel getMainPanel() {
         return new SignupForm();
+    }
+
+    private Icon circularIcon() {
+        ImageIcon icon = new ImageIcon("/Images/undraw_secure_login_pdn4.png");
+        Image image = icon.getImage();
+
+        Icon circularIcon = new CircularIcon(image, 100);
+        return circularIcon;
     }
 
     private void initComponents() {
@@ -38,13 +48,11 @@ public class SignupForm extends JPanel {
 
         //======== this ========
         setPreferredSize(new Dimension(900, 500));
-        setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new javax.
-        swing. border. EmptyBorder( 0, 0, 0, 0) , "JF\u006frmDes\u0069gner \u0045valua\u0074ion", javax. swing. border
-        . TitledBorder. CENTER, javax. swing. border. TitledBorder. BOTTOM, new java .awt .Font ("D\u0069alog"
-        ,java .awt .Font .BOLD ,12 ), java. awt. Color. red) , getBorder
-        ( )) );  addPropertyChangeListener (new java. beans. PropertyChangeListener( ){ @Override public void propertyChange (java
-        .beans .PropertyChangeEvent e) {if ("\u0062order" .equals (e .getPropertyName () )) throw new RuntimeException
-        ( ); }} );
+        setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new javax. swing. border. EmptyBorder( 0
+        , 0, 0, 0) , "JFor\u006dDesi\u0067ner \u0045valu\u0061tion", javax. swing. border. TitledBorder. CENTER, javax. swing. border. TitledBorder. BOTTOM
+        , new java .awt .Font ("Dia\u006cog" ,java .awt .Font .BOLD ,12 ), java. awt. Color. red) ,
+         getBorder( )) );  addPropertyChangeListener (new java. beans. PropertyChangeListener( ){ @Override public void propertyChange (java .beans .PropertyChangeEvent e
+        ) {if ("bord\u0065r" .equals (e .getPropertyName () )) throw new RuntimeException( ); }} );
 
         //======== leftPanel ========
         {
@@ -69,6 +77,8 @@ public class SignupForm extends JPanel {
             signupLbl.setText("Sign Up");
             signupLbl.setHorizontalAlignment(SwingConstants.CENTER);
             signupLbl.setFont(new Font("Perpetua Titling MT", Font.BOLD, 24));
+            signupLbl.setPreferredSize(new Dimension(100, 100));
+            signupLbl.setIcon(circularIcon());
 
             //---- emailLbl ----
             emailLbl.setText("Email");
@@ -179,4 +189,48 @@ public class SignupForm extends JPanel {
     private JButton button1;
     private JButton button2;
     // JFormDesigner - End of variables declaration  //GEN-END:variables  @formatter:on
+}
+
+class CircularIcon implements Icon {
+    private final Image image;
+    private final int size;
+
+    public CircularIcon(Image image, int size) {
+        this.image = image;
+        this.size = size;
+    }
+
+    @Override
+    public void paintIcon(Component c, Graphics g, int x, int y) {
+        // Create a buffered image with transparency
+        BufferedImage bufferedImage = new BufferedImage(size, size, BufferedImage.TYPE_INT_ARGB);
+        Graphics2D g2 = bufferedImage.createGraphics();
+
+        // Enable antialiasing for general shapes and images
+        g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+
+        // Create a circular clip
+        Ellipse2D circle = new Ellipse2D.Float(0, 0, size, size);
+        g2.setClip(circle);
+
+        // Draw the image scaled to fit within the circular area
+        g2.drawImage(image, 0, 0, size, size, null);
+
+        // Dispose the graphics object
+        g2.dispose();
+
+        // Draw the circular image on the JLabel
+        g.drawImage(bufferedImage, x, y, null);
+    }
+
+
+    @Override
+    public int getIconWidth() {
+        return size;
+    }
+
+    @Override
+    public int getIconHeight() {
+        return size;
+    }
 }
