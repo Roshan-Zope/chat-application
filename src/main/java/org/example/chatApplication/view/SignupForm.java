@@ -5,8 +5,6 @@
 package org.example.chatApplication.view;
 
 import java.awt.*;
-import java.awt.geom.Ellipse2D;
-import java.awt.image.BufferedImage;
 import javax.swing.*;
 import javax.swing.GroupLayout;
 
@@ -22,19 +20,10 @@ public class SignupForm extends JPanel {
         return new SignupForm();
     }
 
-    private Icon circularIcon() {
-        ImageIcon icon = new ImageIcon("/Images/undraw_secure_login_pdn4.png");
-        Image image = icon.getImage();
-
-        Icon circularIcon = new CircularIcon(image, 100);
-        return circularIcon;
-    }
-
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents  @formatter:off
-        // Generated using JFormDesigner Evaluation license - Roshan Rajendra Zope
+        // Generated using JFormDesigner Evaluation license - Snehal Shelte
         mainPanel = new JPanel();
-        leftPanel = new JPanel();
         rightPanel = new JPanel();
         signupLbl = new JLabel();
         emailLbl = new JLabel();
@@ -45,29 +34,18 @@ public class SignupForm extends JPanel {
         confirmPasswordPF = new JPasswordField();
         button1 = new JButton();
         button2 = new JButton();
+        usernameLbl = new JLabel();
+        usernameTF = new JTextField();
 
         //======== this ========
         setPreferredSize(new Dimension(900, 500));
-        setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new javax. swing. border. EmptyBorder( 0
-        , 0, 0, 0) , "JFor\u006dDesi\u0067ner \u0045valu\u0061tion", javax. swing. border. TitledBorder. CENTER, javax. swing. border. TitledBorder. BOTTOM
-        , new java .awt .Font ("Dia\u006cog" ,java .awt .Font .BOLD ,12 ), java. awt. Color. red) ,
-         getBorder( )) );  addPropertyChangeListener (new java. beans. PropertyChangeListener( ){ @Override public void propertyChange (java .beans .PropertyChangeEvent e
-        ) {if ("bord\u0065r" .equals (e .getPropertyName () )) throw new RuntimeException( ); }} );
-
-        //======== leftPanel ========
-        {
-
-            GroupLayout leftPanelLayout = new GroupLayout(leftPanel);
-            leftPanel.setLayout(leftPanelLayout);
-            leftPanelLayout.setHorizontalGroup(
-                leftPanelLayout.createParallelGroup()
-                    .addGap(0, 360, Short.MAX_VALUE)
-            );
-            leftPanelLayout.setVerticalGroup(
-                leftPanelLayout.createParallelGroup()
-                    .addGap(0, 500, Short.MAX_VALUE)
-            );
-        }
+        setBorder ( new javax . swing. border .CompoundBorder ( new javax . swing. border .TitledBorder ( new javax . swing
+        . border .EmptyBorder ( 0, 0 ,0 , 0) ,  "JFor\u006dDesi\u0067ner \u0045valu\u0061tion" , javax. swing .border . TitledBorder
+        . CENTER ,javax . swing. border .TitledBorder . BOTTOM, new java. awt .Font ( "Dia\u006cog", java .
+        awt . Font. BOLD ,12 ) ,java . awt. Color .red ) , getBorder () ) )
+        ;  addPropertyChangeListener( new java. beans .PropertyChangeListener ( ){ @Override public void propertyChange (java . beans. PropertyChangeEvent e
+        ) { if( "bord\u0065r" .equals ( e. getPropertyName () ) )throw new RuntimeException( ) ;} } )
+        ;
 
         //======== rightPanel ========
         {
@@ -77,8 +55,6 @@ public class SignupForm extends JPanel {
             signupLbl.setText("Sign Up");
             signupLbl.setHorizontalAlignment(SwingConstants.CENTER);
             signupLbl.setFont(new Font("Perpetua Titling MT", Font.BOLD, 24));
-            signupLbl.setPreferredSize(new Dimension(100, 100));
-            signupLbl.setIcon(circularIcon());
 
             //---- emailLbl ----
             emailLbl.setText("Email");
@@ -93,14 +69,20 @@ public class SignupForm extends JPanel {
             confirmPasswordLbl.setFont(new Font("JetBrains Mono", Font.PLAIN, 18));
 
             //---- button1 ----
-            button1.setText("Already have an accoubnt? Login here...");
+            button1.setText("Already have an account? Login here...");
             button1.setContentAreaFilled(false);
             button1.setFont(new Font("JetBrains Mono ExtraBold", Font.PLAIN, 13));
+            button1.setBorderPainted(false);
 
             //---- button2 ----
             button2.setText("Sign up");
             button2.setContentAreaFilled(false);
             button2.setFont(new Font("JetBrains Mono", Font.BOLD, 13));
+            button2.setBorderPainted(false);
+
+            //---- usernameLbl ----
+            usernameLbl.setText("Username");
+            usernameLbl.setFont(new Font("JetBrains Mono", Font.PLAIN, 18));
 
             GroupLayout rightPanelLayout = new GroupLayout(rightPanel);
             rightPanel.setLayout(rightPanelLayout);
@@ -112,23 +94,26 @@ public class SignupForm extends JPanel {
                                 .addGap(208, 208, 208)
                                 .addComponent(signupLbl, GroupLayout.PREFERRED_SIZE, 131, GroupLayout.PREFERRED_SIZE))
                             .addGroup(rightPanelLayout.createSequentialGroup()
-                                .addGap(78, 78, 78)
-                                .addComponent(confirmPasswordLbl))
+                                .addGap(204, 204, 204)
+                                .addComponent(button2))
+                            .addGroup(rightPanelLayout.createSequentialGroup()
+                                .addGap(82, 82, 82)
+                                .addComponent(button1))
                             .addGroup(rightPanelLayout.createSequentialGroup()
                                 .addGap(70, 70, 70)
-                                .addGroup(rightPanelLayout.createParallelGroup()
+                                .addGroup(rightPanelLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
                                     .addComponent(confirmPasswordPF, GroupLayout.PREFERRED_SIZE, 360, GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(rightPanelLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(passwordPF, GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
-                                        .addComponent(emailTF)
-                                        .addComponent(passwordLbl)
-                                        .addComponent(emailLbl))
-                                    .addGroup(rightPanelLayout.createSequentialGroup()
-                                        .addGap(6, 6, 6)
-                                        .addComponent(button1))))
-                            .addGroup(rightPanelLayout.createSequentialGroup()
-                                .addGap(204, 204, 204)
-                                .addComponent(button2)))
+                                    .addGroup(rightPanelLayout.createParallelGroup()
+                                        .addGroup(rightPanelLayout.createSequentialGroup()
+                                            .addGap(8, 8, 8)
+                                            .addComponent(confirmPasswordLbl))
+                                        .addGroup(rightPanelLayout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(passwordPF, GroupLayout.DEFAULT_SIZE, 360, Short.MAX_VALUE)
+                                            .addComponent(passwordLbl))
+                                        .addComponent(emailLbl)
+                                        .addComponent(emailTF, GroupLayout.PREFERRED_SIZE, 360, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(usernameLbl)
+                                        .addComponent(usernameTF, GroupLayout.PREFERRED_SIZE, 360, GroupLayout.PREFERRED_SIZE)))))
                         .addContainerGap(258, Short.MAX_VALUE))
             );
             rightPanelLayout.setVerticalGroup(
@@ -136,10 +121,14 @@ public class SignupForm extends JPanel {
                     .addGroup(rightPanelLayout.createSequentialGroup()
                         .addGap(38, 38, 38)
                         .addComponent(signupLbl, GroupLayout.PREFERRED_SIZE, 45, GroupLayout.PREFERRED_SIZE)
-                        .addGap(56, 56, 56)
+                        .addGap(18, 18, 18)
                         .addComponent(emailLbl)
                         .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(emailTF, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(usernameLbl)
+                        .addGap(10, 10, 10)
+                        .addComponent(usernameTF, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(passwordLbl)
                         .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
@@ -148,11 +137,11 @@ public class SignupForm extends JPanel {
                         .addComponent(confirmPasswordLbl)
                         .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(confirmPasswordPF, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(18, 18, 18)
                         .addComponent(button1)
-                        .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(18, 18, 18)
                         .addComponent(button2)
-                        .addContainerGap(28, Short.MAX_VALUE))
+                        .addContainerGap(78, Short.MAX_VALUE))
             );
         }
 
@@ -161,23 +150,20 @@ public class SignupForm extends JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup()
                 .addGroup(layout.createSequentialGroup()
-                    .addComponent(leftPanel, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                    .addGap(377, 377, 377)
                     .addComponent(rightPanel, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addContainerGap(60, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup()
-                .addComponent(leftPanel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(rightPanel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         // JFormDesigner - End of component initialization  //GEN-END:initComponents  @formatter:on
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables  @formatter:off
-    // Generated using JFormDesigner Evaluation license - Roshan Rajendra Zope
+    // Generated using JFormDesigner Evaluation license - Snehal Shelte
     private JPanel mainPanel;
-    private JPanel leftPanel;
     private JPanel rightPanel;
     private JLabel signupLbl;
     private JLabel emailLbl;
@@ -188,49 +174,7 @@ public class SignupForm extends JPanel {
     private JPasswordField confirmPasswordPF;
     private JButton button1;
     private JButton button2;
+    private JLabel usernameLbl;
+    private JTextField usernameTF;
     // JFormDesigner - End of variables declaration  //GEN-END:variables  @formatter:on
-}
-
-class CircularIcon implements Icon {
-    private final Image image;
-    private final int size;
-
-    public CircularIcon(Image image, int size) {
-        this.image = image;
-        this.size = size;
-    }
-
-    @Override
-    public void paintIcon(Component c, Graphics g, int x, int y) {
-        // Create a buffered image with transparency
-        BufferedImage bufferedImage = new BufferedImage(size, size, BufferedImage.TYPE_INT_ARGB);
-        Graphics2D g2 = bufferedImage.createGraphics();
-
-        // Enable antialiasing for general shapes and images
-        g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-
-        // Create a circular clip
-        Ellipse2D circle = new Ellipse2D.Float(0, 0, size, size);
-        g2.setClip(circle);
-
-        // Draw the image scaled to fit within the circular area
-        g2.drawImage(image, 0, 0, size, size, null);
-
-        // Dispose the graphics object
-        g2.dispose();
-
-        // Draw the circular image on the JLabel
-        g.drawImage(bufferedImage, x, y, null);
-    }
-
-
-    @Override
-    public int getIconWidth() {
-        return size;
-    }
-
-    @Override
-    public int getIconHeight() {
-        return size;
-    }
 }
