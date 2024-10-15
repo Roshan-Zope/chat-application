@@ -4,14 +4,14 @@ new FormModel {
 	contentType: "form/swing"
 	root: new FormRoot {
 		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-			"$horizontalGroup": "par l {comp mainPanel::l:::x}"
-			"$verticalGroup": "par l {comp mainPanel::t:::x}"
+			"$horizontalGroup": "par l {comp mainPanel::l::950:x}"
+			"$verticalGroup": "par l {comp mainPanel::t::550:x}"
 		} ) {
 			name: "this"
 			"preferredSize": new java.awt.Dimension( 900, 500 )
 			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-				"$horizontalGroup": "par l {seq l {comp leftPanel:::p:320:p, space :::p, comp rightPanel::::574:x}}"
-				"$verticalGroup": "par l {seq l {par l {comp leftPanel::::498:x, comp rightPanel::::498:x}, space :p:2:p}}"
+				"$horizontalGroup": "par l {seq l {comp leftPanel:::p:320:p, space :::p, comp rightPanel::::618:x, space :::p}}"
+				"$verticalGroup": "par l {seq l {par l {comp leftPanel::::548:x, comp rightPanel::::548:x}, space :p:2:p}}"
 			} ) {
 				name: "mainPanel"
 				"preferredSize": new java.awt.Dimension( 900, 500 )
@@ -21,7 +21,7 @@ new FormModel {
 				"maximumSize": new java.awt.Dimension( 900, 500 )
 				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
 					"$horizontalGroup": "par l {space :0:0:x}"
-					"$verticalGroup": "par l {space :0:0:x}"
+					"$verticalGroup": "par l {space :0:548:x}"
 				} ) {
 					name: "leftPanel"
 					"preferredSize": new java.awt.Dimension( 360, 500 )
@@ -29,12 +29,12 @@ new FormModel {
 					"minimumSize": new java.awt.Dimension( 360, 500 )
 				} )
 				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
-					"$horizontalGroup": "par l {seq t {space :0:0:x, comp LoginLbl:::p:144:p, space :p:163:p}, seq {par l {seq l {space :p:70:p, par l {comp passwordLbl::l:p:114:p, comp emailLbl::l:p:114:p, comp emailTF::l:p:360:p, comp passwordPF::l:p:360:p}}, seq l {space :p:169:p, comp forgotPasswordBtn:::p::p}, seq l {space :p:96:p, comp signupLink:::p::p}, seq l {space :p:147:p, comp loginBtn:::p:220:p}}, space ::144:x}}"
-					"$verticalGroup": "par l {seq l {space :p:35:p, comp LoginLbl:::p:55:p, space :p:42:p, comp emailLbl:::p:36:p, space :::p, comp emailTF:::p::p, space :p:18:p, comp passwordLbl:::p:36:p, space :::p, comp passwordPF:::p::p, space :p:12:p, comp forgotPasswordBtn:::p::p, space :::p, comp signupLink:::p::p, space :p:30:p, comp loginBtn:::p:60:p, space :::x}}"
+					"$horizontalGroup": "par l {seq t {space :0:241:x, comp LoginLbl:::p:144:p, space :p:233:p}, seq {par l {seq l {space :p:70:p, par l {comp passwordLbl::l:p:114:p, comp emailLbl::l:p:114:p, comp emailTF::l:p:360:p, comp passwordPF::l:p:360:p}}, seq l {space :p:169:p, comp forgotPasswordBtn:::p::p}, seq l {space :p:96:p, comp signupLink:::p::p}, seq l {space :p:192:p, comp loginBtn:::p:220:p}}, space ::188:x}}"
+					"$verticalGroup": "par l {seq l {space :p:34:p, comp LoginLbl:::p:55:p, space :p:43:p, comp emailLbl:::p:36:p, space :::p, comp emailTF:::p::p, space :p:18:p, comp passwordLbl:::p:36:p, space :::p, comp passwordPF:::p::p, space :p:12:p, comp forgotPasswordBtn:::p::p, space :::p, comp signupLink:::p::p, space :p:32:p, comp loginBtn:::p:60:p, space ::52:x}}"
 				} ) {
 					name: "rightPanel"
 					"preferredSize": new java.awt.Dimension( 540, 500 )
-					"background": new java.awt.Color( 13, 146, 244, 255 )
+					"background": new java.awt.Color( 13, 125, 211, 255 )
 					"minimumSize": new java.awt.Dimension( 540, 500 )
 					add( new FormComponent( "javax.swing.JLabel" ) {
 						name: "LoginLbl"

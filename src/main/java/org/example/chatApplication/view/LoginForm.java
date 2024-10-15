@@ -22,7 +22,7 @@ public class LoginForm extends JPanel {
     }
     private void initComponents() {
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents  @formatter:off
-        // Generated using JFormDesigner Evaluation license - Roshan Rajendra Zope
+        // Generated using JFormDesigner Evaluation license - Snehal Shelte
         mainPanel = new JPanel();
         leftPanel = new JPanel();
         rightPanel = new JPanel();
@@ -37,13 +37,13 @@ public class LoginForm extends JPanel {
 
         //======== this ========
         setPreferredSize(new Dimension(900, 500));
-        setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new javax. swing
-        . border. EmptyBorder( 0, 0, 0, 0) , "JF\u006frm\u0044es\u0069gn\u0065r \u0045va\u006cua\u0074io\u006e", javax. swing. border. TitledBorder
-        . CENTER, javax. swing. border. TitledBorder. BOTTOM, new java .awt .Font ("D\u0069al\u006fg" ,java .
-        awt .Font .BOLD ,12 ), java. awt. Color. red) , getBorder( )) )
-        ;  addPropertyChangeListener (new java. beans. PropertyChangeListener( ){ @Override public void propertyChange (java .beans .PropertyChangeEvent e
-        ) {if ("\u0062or\u0064er" .equals (e .getPropertyName () )) throw new RuntimeException( ); }} )
-        ;
+        setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new javax
+        . swing. border. EmptyBorder( 0, 0, 0, 0) , "JF\u006frmDesi\u0067ner Ev\u0061luatio\u006e", javax. swing
+        . border. TitledBorder. CENTER, javax. swing. border. TitledBorder. BOTTOM, new java .awt .
+        Font ("Dialo\u0067" ,java .awt .Font .BOLD ,12 ), java. awt. Color. red
+        ) , getBorder( )) );  addPropertyChangeListener (new java. beans. PropertyChangeListener( ){ @Override
+        public void propertyChange (java .beans .PropertyChangeEvent e) {if ("borde\u0072" .equals (e .getPropertyName (
+        ) )) throw new RuntimeException( ); }} );
 
         //======== mainPanel ========
         {
@@ -67,14 +67,14 @@ public class LoginForm extends JPanel {
                 );
                 leftPanelLayout.setVerticalGroup(
                     leftPanelLayout.createParallelGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGap(0, 548, Short.MAX_VALUE)
                 );
             }
 
             //======== rightPanel ========
             {
                 rightPanel.setPreferredSize(new Dimension(540, 500));
-                rightPanel.setBackground(new Color(0x0d92f4));
+                rightPanel.setBackground(new Color(0x0d7dd3));
                 rightPanel.setMinimumSize(new Dimension(540, 500));
 
                 //---- LoginLbl ----
@@ -123,9 +123,9 @@ public class LoginForm extends JPanel {
                 rightPanelLayout.setHorizontalGroup(
                     rightPanelLayout.createParallelGroup()
                         .addGroup(GroupLayout.Alignment.TRAILING, rightPanelLayout.createSequentialGroup()
-                            .addGap(0, 0, Short.MAX_VALUE)
+                            .addGap(0, 241, Short.MAX_VALUE)
                             .addComponent(LoginLbl, GroupLayout.PREFERRED_SIZE, 144, GroupLayout.PREFERRED_SIZE)
-                            .addGap(163, 163, 163))
+                            .addGap(233, 233, 233))
                         .addGroup(rightPanelLayout.createSequentialGroup()
                             .addGroup(rightPanelLayout.createParallelGroup()
                                 .addGroup(rightPanelLayout.createSequentialGroup()
@@ -142,16 +142,16 @@ public class LoginForm extends JPanel {
                                     .addGap(96, 96, 96)
                                     .addComponent(signupLink))
                                 .addGroup(rightPanelLayout.createSequentialGroup()
-                                    .addGap(147, 147, 147)
+                                    .addGap(192, 192, 192)
                                     .addComponent(loginBtn, GroupLayout.PREFERRED_SIZE, 220, GroupLayout.PREFERRED_SIZE)))
-                            .addContainerGap(144, Short.MAX_VALUE))
+                            .addContainerGap(188, Short.MAX_VALUE))
                 );
                 rightPanelLayout.setVerticalGroup(
                     rightPanelLayout.createParallelGroup()
                         .addGroup(rightPanelLayout.createSequentialGroup()
-                            .addGap(35, 35, 35)
+                            .addGap(34, 34, 34)
                             .addComponent(LoginLbl, GroupLayout.PREFERRED_SIZE, 55, GroupLayout.PREFERRED_SIZE)
-                            .addGap(42, 42, 42)
+                            .addGap(43, 43, 43)
                             .addComponent(emailLbl, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(emailTF, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
@@ -163,9 +163,9 @@ public class LoginForm extends JPanel {
                             .addComponent(forgotPasswordBtn)
                             .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(signupLink)
-                            .addGap(30, 30, 30)
+                            .addGap(32, 32, 32)
                             .addComponent(loginBtn, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)
-                            .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addContainerGap(52, Short.MAX_VALUE))
                 );
             }
 
@@ -176,14 +176,15 @@ public class LoginForm extends JPanel {
                     .addGroup(mainPanelLayout.createSequentialGroup()
                         .addComponent(leftPanel, GroupLayout.PREFERRED_SIZE, 320, GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(rightPanel, GroupLayout.DEFAULT_SIZE, 574, Short.MAX_VALUE))
+                        .addComponent(rightPanel, GroupLayout.DEFAULT_SIZE, 618, Short.MAX_VALUE)
+                        .addContainerGap())
             );
             mainPanelLayout.setVerticalGroup(
                 mainPanelLayout.createParallelGroup()
                     .addGroup(mainPanelLayout.createSequentialGroup()
                         .addGroup(mainPanelLayout.createParallelGroup()
-                            .addComponent(leftPanel, GroupLayout.DEFAULT_SIZE, 498, Short.MAX_VALUE)
-                            .addComponent(rightPanel, GroupLayout.DEFAULT_SIZE, 498, Short.MAX_VALUE))
+                            .addComponent(leftPanel, GroupLayout.DEFAULT_SIZE, 548, Short.MAX_VALUE)
+                            .addComponent(rightPanel, GroupLayout.DEFAULT_SIZE, 548, Short.MAX_VALUE))
                         .addGap(2, 2, 2))
             );
         }
@@ -192,17 +193,17 @@ public class LoginForm extends JPanel {
         setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup()
-                .addComponent(mainPanel, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(mainPanel, GroupLayout.DEFAULT_SIZE, 950, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup()
-                .addComponent(mainPanel, GroupLayout.Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(mainPanel, GroupLayout.Alignment.TRAILING, GroupLayout.DEFAULT_SIZE, 550, Short.MAX_VALUE)
         );
         // JFormDesigner - End of component initialization  //GEN-END:initComponents  @formatter:on
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables  @formatter:off
-    // Generated using JFormDesigner Evaluation license - Roshan Rajendra Zope
+    // Generated using JFormDesigner Evaluation license - Snehal Shelte
     private JPanel mainPanel;
     private JPanel leftPanel;
     private JPanel rightPanel;
