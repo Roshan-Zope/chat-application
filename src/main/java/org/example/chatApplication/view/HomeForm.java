@@ -8,7 +8,6 @@ import java.awt.*;
 import javax.swing.*;
 import javax.swing.GroupLayout;
 import javax.swing.border.*;
-import com.intellij.ide.ui.laf.*;
 
 /**
  * @author shelt
