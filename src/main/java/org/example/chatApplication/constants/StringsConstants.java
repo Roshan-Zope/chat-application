@@ -13,4 +13,9 @@ public class StringsConstants {
     public static final String SPRING_MAIL_PORT = "spring.mail.port";         // Key for the SMTP server port
     public static final String SPRING_MAIL_USERNAME = "spring.mail.username"; // Key for the email account username
     public static final String SPRING_MAIL_PASSWORD = "spring.mail.password"; // Key for the email account password
+
+    // Constants for database connection
+    public static final String DATABASE_URL = "jdbc:postgresql://localhost/chatApplication"; // Url for the postgresql localhost server
+    public static final String DATABASE_USERNAME = "postgres";                               // Username for the postgresql server
+    public static final String DATABASE_PASSWORD = "Ro$h@n456";                              // Password for the postgresql server
 }

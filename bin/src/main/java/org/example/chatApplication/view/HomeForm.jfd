@@ -1,0 +1,130 @@
+JFDML JFormDesigner: "8.2.4.0.393" Java: "17.0.10" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+			"$horizontalGroup": "par l {seq l {space :::p, comp panel1:::p::p, space :::p, comp panel2:::p::p, space :::p, comp panel3:::::x}}"
+			"$verticalGroup": "par l {comp panel1:::::x, comp panel2:::::x, comp panel3::l:::x}"
+		} ) {
+			name: "this"
+			"preferredSize": new java.awt.Dimension( 900, 500 )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+				"$horizontalGroup": "par t {seq l {par l {seq {par l {seq {space :p:22:p, comp contactImage:::p::p}, seq {space :p:15:p, comp profileImage:::p:60:p}}, space :::p, par l {comp usernameLbl:::p:173:p, seq t {comp contactLbl:::p::p, space :p:72:p}}}, seq {space :::p, comp searchBarTF:::p:248:p}}, space :::p, comp label1:::p:121:p}}"
+				"$verticalGroup": "par l {seq l {space :p:31:p, par l:::p {comp usernameLbl::::43:x, comp profileImage::::43:x}, space u:::p, comp searchBarTF:::p:30:p, space :p:14:p, par b {comp contactLbl::b:p::p, comp contactImage::b:p::p}, space :::p, comp label1:::p::p, space ::340:x}}"
+			} ) {
+				name: "panel1"
+				"preferredSize": new java.awt.Dimension( 260, 500 )
+				"background": new java.awt.Color( 238, 238, 238, 255 )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label1"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "usernameLbl"
+					"text": "Snehal Shelte"
+					"font": &Font0 new java.awt.Font( "Yu Gothic UI Semibold", 1, 17 )
+					"border": new javax.swing.border.MatteBorder( 0, 0, 2, 0, sfield java.awt.Color black )
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "profileImage"
+					"icon": new com.jformdesigner.model.SwingIcon( 0, "/Images/person_16dp.png" )
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "contactLbl"
+					"text": "Roshan Zope"
+					"font": #Font0
+				} )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "searchBarTF"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "contactImage"
+					"text": "image"
+				} )
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+				"$horizontalGroup": "par l {seq {space :::p, par l {seq l {comp searchBarTF3:::p:363:p, space :19::x}, seq t {par t {seq {space :0:184:x, comp scrollPane1:::p:164:p}, seq {comp label4:::p:40:p, space s:::p, comp label5:::p:132:p, space ::41:x, comp button3:::p:35:p, space :::p, comp button4:::p:34:p, space :::p, comp button6:::p:36:p}}, space :p:21:p}}}, seq l {space :p:15:p, comp textArea2:::p:162:p, space :0:198:x}}"
+				"$verticalGroup": "par l {seq t {space :p:23:p, par b {comp label4::b:p:40:p, comp label5::b:p:40:p, comp button3::b:p:41:p, comp button4::b:p:41:p, comp button6::b:p:41:p}, space :p:32:p, comp scrollPane1:::p::p, space :p:9:p, comp textArea2:::p:30:p, space ::224:x, comp searchBarTF3:::p:47:p, space :p:21:p}}"
+			} ) {
+				name: "panel2"
+				"background": new java.awt.Color( 255, 255, 255, 255 )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "searchBarTF3"
+					"border": new javax.swing.border.LineBorder( sfield java.awt.Color black, 5, true )
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label4"
+					"text": "text"
+					"horizontalAlignment": 0
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label5"
+					"text": "Roshan Zope"
+					"border": new javax.swing.border.MatteBorder( 0, 0, 1, 0, sfield java.awt.Color black )
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "button3"
+					"text": "C"
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "button4"
+					"text": "VC"
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "button6"
+					"text": "M"
+				} )
+				add( new FormContainer( "javax.swing.JScrollPane", new FormLayoutManager( class javax.swing.JScrollPane ) ) {
+					name: "scrollPane1"
+					add( new FormComponent( "javax.swing.JTextArea" ) {
+						name: "textArea1"
+						"text": "Tu mere se pyaar karta hai ki nhi?"
+						"editable": false
+						"lineWrap": true
+						"border": new javax.swing.border.MatteBorder( 1, 1, 1, 1, sfield java.awt.Color black )
+					} )
+				} )
+				add( new FormComponent( "javax.swing.JTextArea" ) {
+					name: "textArea2"
+					"text": "Ha, karta hu.."
+					"editable": false
+					"lineWrap": true
+					"border": new javax.swing.border.MatteBorder( 1, 1, 1, 1, sfield java.awt.Color black )
+				} )
+			} )
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {
+				"$horizontalGroup": "par l {seq l {space :p:35:p, comp searchBarTF2:::p:176:p, space :0:36:x}, seq {par l {seq l {space :p:40:p, comp button7:::p:75:p, space s:::p, comp button2:::p:75:p}, seq l {space :p:69:p, comp userProfileImage:::p:100:p}}, space ::39:x}}"
+				"$verticalGroup": "par l {seq l {space :p:17:p, comp searchBarTF2:::p:30:p, space :p:47:p, comp userProfileImage:::p:100:p, space u:::p, par b {comp button2::b:p::p, comp button7::b:p::p}, space ::256:x}}"
+			} ) {
+				name: "panel3"
+				"background": new java.awt.Color( 238, 238, 238, 255 )
+				add( new FormComponent( "javax.swing.JTextField" ) {
+					name: "searchBarTF2"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "userProfileImage"
+					"text": "image"
+					"horizontalAlignment": 0
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "button2"
+					"text": "text"
+				} )
+				add( new FormComponent( "javax.swing.JButton" ) {
+					name: "button7"
+					"text": "text"
+				} )
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 720, 400 )
+		} )
+		add( new FormComponent( "javax.swing.JButton" ) {
+			name: "button5"
+			"text": "C"
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 516 )
+			"size": new java.awt.Dimension( 28, 32 )
+		} )
+	}
+}
