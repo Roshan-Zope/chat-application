@@ -38,12 +38,13 @@ public class LoginForm extends JPanel {
 
         //======== this ========
         setPreferredSize(new Dimension(900, 500));
-        setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new javax. swing.
-        border. EmptyBorder( 0, 0, 0, 0) , "JF\u006frmD\u0065sig\u006eer \u0045val\u0075ati\u006fn", javax. swing. border. TitledBorder. CENTER
-        , javax. swing. border. TitledBorder. BOTTOM, new java .awt .Font ("Dia\u006cog" ,java .awt .Font
-        .BOLD ,12 ), java. awt. Color. red) , getBorder( )) );  addPropertyChangeListener (
-        new java. beans. PropertyChangeListener( ){ @Override public void propertyChange (java .beans .PropertyChangeEvent e) {if ("\u0062ord\u0065r"
-        .equals (e .getPropertyName () )) throw new RuntimeException( ); }} );
+        setBorder(new javax.swing.border.CompoundBorder(new javax.swing.border.TitledBorder(new javax.
+        swing.border.EmptyBorder(0,0,0,0), "JFor\u006dDesi\u0067ner \u0045valu\u0061tion",javax.swing.border
+        .TitledBorder.CENTER,javax.swing.border.TitledBorder.BOTTOM,new java.awt.Font("Dia\u006cog"
+        ,java.awt.Font.BOLD,12),java.awt.Color.red), getBorder
+        ())); addPropertyChangeListener(new java.beans.PropertyChangeListener(){@Override public void propertyChange(java
+        .beans.PropertyChangeEvent e){if("bord\u0065r".equals(e.getPropertyName()))throw new RuntimeException
+        ();}});
 
         //======== mainPanel ========
         {
@@ -127,15 +128,6 @@ public class LoginForm extends JPanel {
                 rightPanel.setLayout(rightPanelLayout);
                 rightPanelLayout.setHorizontalGroup(
                     rightPanelLayout.createParallelGroup()
-                        .addGroup(rightPanelLayout.createSequentialGroup()
-                            .addGroup(rightPanelLayout.createParallelGroup()
-                                .addGroup(rightPanelLayout.createSequentialGroup()
-                                    .addGap(134, 134, 134)
-                                    .addComponent(passwordLbl, GroupLayout.PREFERRED_SIZE, 114, GroupLayout.PREFERRED_SIZE))
-                                .addGroup(rightPanelLayout.createSequentialGroup()
-                                    .addGap(133, 133, 133)
-                                    .addComponent(emailLbl, GroupLayout.PREFERRED_SIZE, 114, GroupLayout.PREFERRED_SIZE)))
-                            .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGroup(GroupLayout.Alignment.TRAILING, rightPanelLayout.createSequentialGroup()
                             .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(rightPanelLayout.createParallelGroup()
@@ -149,14 +141,17 @@ public class LoginForm extends JPanel {
                             .addGap(0, 96, Short.MAX_VALUE)
                             .addGroup(rightPanelLayout.createParallelGroup()
                                 .addGroup(GroupLayout.Alignment.TRAILING, rightPanelLayout.createSequentialGroup()
-                                    .addGroup(rightPanelLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
-                                        .addComponent(passwordPF, GroupLayout.PREFERRED_SIZE, 360, GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(emailTF, GroupLayout.PREFERRED_SIZE, 360, GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(signupLink))
-                                    .addGap(84, 84, 84))
-                                .addGroup(GroupLayout.Alignment.TRAILING, rightPanelLayout.createSequentialGroup()
                                     .addComponent(loginBtn, GroupLayout.PREFERRED_SIZE, 220, GroupLayout.PREFERRED_SIZE)
-                                    .addGap(138, 138, 138))))
+                                    .addGap(138, 138, 138))
+                                .addGroup(GroupLayout.Alignment.TRAILING, rightPanelLayout.createSequentialGroup()
+                                    .addGroup(rightPanelLayout.createParallelGroup()
+                                        .addComponent(emailLbl, GroupLayout.PREFERRED_SIZE, 114, GroupLayout.PREFERRED_SIZE)
+                                        .addGroup(rightPanelLayout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+                                            .addComponent(passwordPF, GroupLayout.PREFERRED_SIZE, 360, GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(emailTF, GroupLayout.PREFERRED_SIZE, 360, GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(signupLink))
+                                        .addComponent(passwordLbl, GroupLayout.PREFERRED_SIZE, 114, GroupLayout.PREFERRED_SIZE))
+                                    .addGap(84, 84, 84))))
                 );
                 rightPanelLayout.setVerticalGroup(
                     rightPanelLayout.createParallelGroup()
