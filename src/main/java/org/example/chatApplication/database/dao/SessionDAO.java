@@ -1,5 +1,6 @@
 package org.example.chatApplication.database.dao;
 
+import org.example.chatApplication.constants.StringsConstants;
 import org.example.chatApplication.database.DatabaseConnection;
 import org.example.chatApplication.models.Session;
 
@@ -9,39 +10,35 @@ import java.util.Optional;
 public class SessionDAO {
 
     // Create a new session in the database
-    public void createSession(Session session) throws SQLException {
-        String sql = "INSERT INTO sessions (user_id, session_token, created_at, last_activity) VALUES (?, ?, ?, ?)";
+    public void createSession(int userId, String sessionToken) throws SQLException {
 
         try (Connection conn = DatabaseConnection.getConnection();
-             PreparedStatement pstmt = conn.prepareStatement(sql)) {
-
-            pstmt.setInt(1, session.getUserId());
-            pstmt.setString(2, session.getSessionToken());
-            pstmt.setTimestamp(3, session.getCreatedAt());
-            pstmt.setTimestamp(4, session.getLastActivity());
-
-            pstmt.executeUpdate();
+             PreparedStatement ps = conn.prepareStatement(StringsConstants.CREATE_SESSION_QUERY)) {
+            ps.setInt(1, userId);
+            ps.setString(2, sessionToken);
+            ps.setString(3, sessionToken);
+            ps.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage() + " in sessionDAO");
         }
     }
 
     // Retrieve a session by session token
     public Optional<Session> getSessionByToken(String sessionToken) {
-        String sql = "SELECT * FROM sessions WHERE session_token = ?";
-
         try (Connection conn = DatabaseConnection.getConnection();
-             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+             PreparedStatement ps = conn.prepareStatement(StringsConstants.GET_SESSION_BY_SESSION_TOKEN_QUERY)) {
 
-            pstmt.setString(1, sessionToken);
-            ResultSet rs = pstmt.executeQuery();
+            ps.setString(1, sessionToken);
+            ResultSet rs = ps.executeQuery();
 
             if (rs.next()) {
                 Session session = new Session(
-                        rs.getInt("user_id"),
-                        rs.getString("session_token"),
-                        rs.getTimestamp("created_at"),
-                        rs.getTimestamp("last_activity")
+                        rs.getInt(StringsConstants.DATABASE_SESSIONS_TABLE_USER_ID_COLUMN),
+                        rs.getString(StringsConstants.DATABASE_SESSIONS_TABLE_SESSION_TOKEN_COLUMN),
+                        rs.getTimestamp(StringsConstants.DATABASE_SESSIONS_TABLE_CREATED_AT_COLUMN),
+                        rs.getTimestamp(StringsConstants.DATABASE_SESSIONS_TABLE_LAST_ACTIVE_COLUMN)
                 );
-                session.setId(rs.getInt("id"));
+                session.setId(rs.getInt(StringsConstants.DATABASE_SESSIONS_TABLE_SESSION_ID_COLUMN));
                 return Optional.of(session);
             }
         } catch (SQLException e) {
@@ -53,38 +50,22 @@ public class SessionDAO {
 
     // Update the last activity of a session
     public void updateLastActivity(String sessionToken, Timestamp lastActivity) throws SQLException {
-        String sql = "UPDATE sessions SET last_activity = ? WHERE session_token = ?";
-
         try (Connection conn = DatabaseConnection.getConnection();
-             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+             PreparedStatement ps = conn.prepareStatement(StringsConstants.UPDATE_SESSION_LAST_ACTIVITY_QUERY)) {
 
-            pstmt.setTimestamp(1, lastActivity);
-            pstmt.setString(2, sessionToken);
-            pstmt.executeUpdate();
+            ps.setTimestamp(1, lastActivity);
+            ps.setString(2, sessionToken);
+            ps.executeUpdate();
         }
     }
 
     // Invalidate session by session token (delete from the table)
     public void invalidateSession(String sessionToken) throws SQLException {
-        String sql = "DELETE FROM sessions WHERE session_token = ?";
-
         try (Connection conn = DatabaseConnection.getConnection();
-             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+             PreparedStatement ps = conn.prepareStatement(StringsConstants.DELETE_SESSION_BY_SESSION_TOKEN_QUERY)) {
 
-            pstmt.setString(1, sessionToken);
-            pstmt.executeUpdate();
-        }
-    }
-
-    // Invalidate all sessions for a user (during logout)
-    public void invalidateSessionByUserId(int userId) throws SQLException {
-        String sql = "DELETE FROM sessions WHERE user_id = ?";
-
-        try (Connection conn = DatabaseConnection.getConnection();
-             PreparedStatement pstmt = conn.prepareStatement(sql)) {
-
-            pstmt.setInt(1, userId);
-            pstmt.executeUpdate();
+            ps.setString(1, sessionToken);
+            ps.executeUpdate();
         }
     }
 }

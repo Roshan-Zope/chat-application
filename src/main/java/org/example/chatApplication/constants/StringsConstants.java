@@ -39,8 +39,8 @@ public class StringsConstants {
     // Constants for database Query
     public static final String GET_USER_BY_USERNAME_QUERY = "select * from " + DATABASE_USER_TABLE + " where " + DATABASE_USER_TABLE_USERNAME_COLUMN + " = ?";                                          // Query for retrieving user by username
     public static final String SAVE_USER_QUERY = "insert into " + DATABASE_USER_TABLE + " (" + DATABASE_USER_TABLE_USERNAME_COLUMN + ", " + DATABASE_USER_TABLE_EMAIL_COLUMN + ", " + DATABASE_USER_TABLE_PASSWORD_COLUMN + ") values (?, ?, ?)";    // Query for inserting new user
-    public static final String CREATE_SESSION_QUERY = "insert into " + DATABASE_SESSIONS_TABLE + " (" + DATABASE_SESSIONS_TABLE_USER_ID_COLUMN + ", " + DATABASE_SESSIONS_TABLE_SESSION_TOKEN_COLUMN + ", " + DATABASE_SESSIONS_TABLE_CREATED_AT_COLUMN + ") values (?, ?, CURRENT_TIMESTAMP)";
-    public static final String DELETE_SESSION_QUERY = "delete from " + DATABASE_SESSIONS_TABLE + " where " + DATABASE_SESSIONS_TABLE_USER_ID_COLUMN + " = ?";
+    public static final String CREATE_SESSION_QUERY = "insert into " + DATABASE_SESSIONS_TABLE + " (" + DATABASE_SESSIONS_TABLE_USER_ID_COLUMN + ", " + DATABASE_SESSIONS_TABLE_SESSION_TOKEN_COLUMN + ", " + DATABASE_SESSIONS_TABLE_CREATED_AT_COLUMN + ", " + DATABASE_SESSIONS_TABLE_LAST_ACTIVE_COLUMN + ") values (?, ?, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP) on conflict (" + DATABASE_SESSIONS_TABLE_USER_ID_COLUMN + ") do update set " + DATABASE_SESSIONS_TABLE_SESSION_TOKEN_COLUMN + " = ?";
+    public static final String DELETE_SESSION_BY_SESSION_TOKEN_QUERY = "delete from " + DATABASE_SESSIONS_TABLE + " where " + DATABASE_SESSIONS_TABLE_SESSION_TOKEN_COLUMN + " = ?";
     public static final String GET_SESSION_BY_SESSION_TOKEN_QUERY = "select * from " + DATABASE_SESSIONS_TABLE + " where " + DATABASE_SESSIONS_TABLE_SESSION_TOKEN_COLUMN + " = ?";
-    public static final String GET_SESSION_BY_USER_ID_QUERY = "select * from " + DATABASE_SESSIONS_TABLE + " where " + DATABASE_SESSIONS_TABLE_USER_ID_COLUMN + " = ?";
+    public static final String UPDATE_SESSION_LAST_ACTIVITY_QUERY = "update " + DATABASE_SESSIONS_TABLE + " set " + DATABASE_SESSIONS_TABLE_LAST_ACTIVE_COLUMN + " = ? where " + DATABASE_SESSIONS_TABLE_SESSION_TOKEN_COLUMN + " = ?";
 }

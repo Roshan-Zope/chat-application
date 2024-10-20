@@ -11,14 +11,11 @@ import java.util.UUID;
 
 public class SessionService {
 
+    private final SessionDAO sessionDAO = new SessionDAO();
+
     public void createSession(int userId, String sessionToken) {
-        String sql = "INSERT INTO sessions (user_id, session_token, created_at, expires_at) VALUES (?, ?, CURRENT_TIMESTAMP) ON CONFLICT (user_id) DO UPDATE SET session_token = ?";
-        try (Connection conn = DatabaseConnection.getConnection();
-             PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            pstmt.setInt(1, userId);
-            pstmt.setString(2, sessionToken);
-            pstmt.setString(3, sessionToken);
-            pstmt.executeUpdate();
+        try {
+            sessionDAO.createSession(userId, sessionToken);
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
@@ -26,11 +23,8 @@ public class SessionService {
 
     // Invalidate a session
     public void invalidateSession(String sessionToken) {
-        String sql = "DELETE FROM sessions WHERE session_token = ?";
-        try (Connection conn = DatabaseConnection.getConnection();
-             PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            pstmt.setString(1, sessionToken);
-            pstmt.executeUpdate();
+        try {
+             sessionDAO.invalidateSession(sessionToken);
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         }
@@ -38,15 +32,7 @@ public class SessionService {
 
     // Validate a session (check if session exists and not expired)
     public boolean validateSession(String sessionToken) {
-        String sql = "SELECT * FROM sessions WHERE session_token = ? AND expires_at > CURRENT_TIMESTAMP";
-        try (Connection conn = DatabaseConnection.getConnection();
-             PreparedStatement pstmt = conn.prepareStatement(sql)) {
-            pstmt.setString(1, sessionToken);
-            ResultSet rs = pstmt.executeQuery();
-            return rs.next();
-        } catch (SQLException e) {
-            System.out.println(e.getMessage());
-        }
-        return false;
+        Optional<Session> session = sessionDAO.getSessionByToken(sessionToken);
+        return session.isPresent();
     }
 }
