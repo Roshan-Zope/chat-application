@@ -1,7 +1,10 @@
 package org.example.chatApplication.services;
 
 import org.example.chatApplication.controllers.EmailController;
+import org.example.chatApplication.database.SessionStorage;
+import org.example.chatApplication.database.dao.SessionDAO;
 import org.example.chatApplication.database.dao.UserDAO;
+import org.example.chatApplication.models.Session;
 import org.example.chatApplication.models.entities.User;
 import org.example.chatApplication.utilities.OTPGenerator;
 
@@ -10,6 +13,7 @@ import java.util.Optional;
 public class AuthService {
     private UserDAO userDAO = new UserDAO();
     private SessionService sessionService = new SessionService();
+    private SessionDAO sessionDAO = new SessionDAO();
 
     public boolean login(String username, String password) {
         User user = userDAO.getUserByUsername(username);
@@ -46,9 +50,15 @@ public class AuthService {
         return false;
     }
 
-    public void logout(String  userId) {
+    public void logout() {
+        Optional<Session> session = sessionDAO.getSessionByToken(SessionStorage.loadSessionToken());
         // Invalidate the session for the user
-        sessionService.invalidateSession(userId);
-        System.out.println("User logged out and session invalidated.");
+        if (session.isPresent()) {
+            sessionService.invalidateSession(String.valueOf(session.get().getUserId()));
+            SessionStorage.clearSessionToken();
+            System.out.println("User logged out and session invalidated.");
+        } else {
+            System.out.println("Log out Failed...");
+        }
     }
 }

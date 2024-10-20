@@ -27,12 +27,7 @@ public class AuthController {
         return authService.signUp(username, email, password, validateOtp);
     }
     
-    public void logout(String username) {
-        String sessionToken = SessionStorage.loadSessionToken();
-        if (sessionToken != null) {
-            sessionController.invalidateSession(sessionToken);
-            SessionStorage.clearSessionToken();
-        }
-        authService.logout(username);
+    public void logout() {
+        authService.logout();
     }
 }

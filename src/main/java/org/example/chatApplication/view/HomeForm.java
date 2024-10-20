@@ -4,7 +4,13 @@
 
 package org.example.chatApplication.view;
 
+import org.example.chatApplication.constants.ScreenConstants;
+import org.example.chatApplication.controllers.AuthController;
+import org.example.chatApplication.services.AuthService;
+import org.example.chatApplication.utilities.Navigator;
+
 import java.awt.*;
+import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.GroupLayout;
 import javax.swing.border.*;
@@ -13,13 +19,23 @@ import javax.swing.border.*;
  * @author shelt
  */
 public class HomeForm extends JPanel {
+    private static Navigator navigator;
+    private AuthController authController;
+    
     public HomeForm() {
         initComponents();
     }
 
+    private void onLogout(ActionEvent e) {
+        authController.logout();
+        navigator.showScreen(ScreenConstants.LOGIN);
+    }
+
     private void initComponents() {
+        authController = new AuthController();
+        navigator = Navigator.getInstance();
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents  @formatter:off
-        // Generated using JFormDesigner Evaluation license - Snehal Shelte
+        // Generated using JFormDesigner Evaluation license - Roshan Rajendra Zope
         panel1 = new JPanel();
         label1 = new JLabel();
         usernameLbl = new JLabel();
@@ -27,6 +43,7 @@ public class HomeForm extends JPanel {
         contactLbl = new JLabel();
         searchBarTF = new JTextField();
         contactImage = new JLabel();
+        logoutBtn = new JButton();
         panel2 = new JPanel();
         searchBarTF3 = new JTextField();
         label4 = new JLabel();
@@ -42,15 +59,15 @@ public class HomeForm extends JPanel {
         userProfileImage = new JLabel();
         button2 = new JButton();
         button7 = new JButton();
-        button5 = new JButton();
 
         //======== this ========
         setPreferredSize(new Dimension(900, 500));
-        setBorder(new javax.swing.border.CompoundBorder(new javax.swing.border.TitledBorder(new javax.swing.border.EmptyBorder(
-        0,0,0,0), "JF\u006frmDesi\u0067ner Ev\u0061luatio\u006e",javax.swing.border.TitledBorder.CENTER,javax.swing.border.TitledBorder
-        .BOTTOM,new java.awt.Font("Dialo\u0067",java.awt.Font.BOLD,12),java.awt.Color.
-        red), getBorder())); addPropertyChangeListener(new java.beans.PropertyChangeListener(){@Override public void propertyChange(java.
-        beans.PropertyChangeEvent e){if("borde\u0072".equals(e.getPropertyName()))throw new RuntimeException();}});
+        setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new javax. swing. border. EmptyBorder
+        ( 0, 0, 0, 0) , "JFor\u006dDesi\u0067ner \u0045valu\u0061tion", javax. swing. border. TitledBorder. CENTER, javax. swing. border
+        . TitledBorder. BOTTOM, new java .awt .Font ("Dia\u006cog" ,java .awt .Font .BOLD ,12 ), java. awt
+        . Color. red) , getBorder( )) );  addPropertyChangeListener (new java. beans. PropertyChangeListener( ){ @Override public void
+        propertyChange (java .beans .PropertyChangeEvent e) {if ("bord\u0065r" .equals (e .getPropertyName () )) throw new RuntimeException( )
+        ; }} );
 
         //======== panel1 ========
         {
@@ -72,48 +89,64 @@ public class HomeForm extends JPanel {
             //---- contactImage ----
             contactImage.setText("image");
 
+            //---- logoutBtn ----
+            logoutBtn.setIcon(new ImageIcon(getClass().getResource("/Images/logout.png")));
+            logoutBtn.setBackground(Color.white);
+            logoutBtn.addActionListener(e -> onLogout(e));
+
             GroupLayout panel1Layout = new GroupLayout(panel1);
             panel1.setLayout(panel1Layout);
             panel1Layout.setHorizontalGroup(
                 panel1Layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
-                    .addGroup(GroupLayout.Alignment.LEADING, panel1Layout.createSequentialGroup()
-                        .addGroup(panel1Layout.createParallelGroup()
-                            .addGroup(panel1Layout.createSequentialGroup()
-                                .addGroup(panel1Layout.createParallelGroup()
-                                    .addGroup(panel1Layout.createSequentialGroup()
-                                        .addGap(22, 22, 22)
-                                        .addComponent(contactImage))
-                                    .addGroup(panel1Layout.createSequentialGroup()
-                                        .addGap(15, 15, 15)
-                                        .addComponent(profileImage, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(panel1Layout.createParallelGroup()
-                                    .addComponent(usernameLbl, GroupLayout.PREFERRED_SIZE, 173, GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(GroupLayout.Alignment.TRAILING, panel1Layout.createSequentialGroup()
-                                        .addComponent(contactLbl)
-                                        .addGap(72, 72, 72))))
-                            .addGroup(panel1Layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(searchBarTF, GroupLayout.PREFERRED_SIZE, 248, GroupLayout.PREFERRED_SIZE)))
-                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(panel1Layout.createSequentialGroup()
+                        .addGap(381, 381, 381)
                         .addComponent(label1, GroupLayout.PREFERRED_SIZE, 121, GroupLayout.PREFERRED_SIZE))
+                    .addGroup(GroupLayout.Alignment.LEADING, panel1Layout.createSequentialGroup()
+                        .addGroup(panel1Layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
+                            .addGroup(GroupLayout.Alignment.LEADING, panel1Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addGroup(panel1Layout.createParallelGroup()
+                                    .addGroup(panel1Layout.createSequentialGroup()
+                                        .addGroup(panel1Layout.createParallelGroup()
+                                            .addGroup(panel1Layout.createSequentialGroup()
+                                                .addGap(16, 16, 16)
+                                                .addComponent(contactImage))
+                                            .addGroup(panel1Layout.createSequentialGroup()
+                                                .addGap(9, 9, 9)
+                                                .addComponent(profileImage, GroupLayout.PREFERRED_SIZE, 60, GroupLayout.PREFERRED_SIZE)))
+                                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(panel1Layout.createParallelGroup()
+                                            .addComponent(usernameLbl, GroupLayout.PREFERRED_SIZE, 173, GroupLayout.PREFERRED_SIZE)
+                                            .addGroup(GroupLayout.Alignment.TRAILING, panel1Layout.createSequentialGroup()
+                                                .addComponent(contactLbl)
+                                                .addGap(72, 72, 72))))
+                                    .addComponent(searchBarTF, GroupLayout.PREFERRED_SIZE, 248, GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(GroupLayout.Alignment.LEADING, panel1Layout.createSequentialGroup()
+                                .addGap(202, 202, 202)
+                                .addComponent(logoutBtn, GroupLayout.PREFERRED_SIZE, 43, GroupLayout.PREFERRED_SIZE)))
+                        .addGap(248, 248, 248))
             );
             panel1Layout.setVerticalGroup(
                 panel1Layout.createParallelGroup()
                     .addGroup(panel1Layout.createSequentialGroup()
-                        .addGap(31, 31, 31)
-                        .addGroup(panel1Layout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
-                            .addComponent(usernameLbl, GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE)
-                            .addComponent(profileImage, GroupLayout.DEFAULT_SIZE, 43, Short.MAX_VALUE))
-                        .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(searchBarTF, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-                        .addGap(14, 14, 14)
-                        .addGroup(panel1Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
-                            .addComponent(contactLbl)
-                            .addComponent(contactImage))
-                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(label1)
-                        .addContainerGap(340, Short.MAX_VALUE))
+                        .addGroup(panel1Layout.createParallelGroup()
+                            .addGroup(panel1Layout.createSequentialGroup()
+                                .addGap(198, 198, 198)
+                                .addComponent(label1))
+                            .addGroup(panel1Layout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(logoutBtn, GroupLayout.PREFERRED_SIZE, 33, GroupLayout.PREFERRED_SIZE)
+                                .addGap(12, 12, 12)
+                                .addGroup(panel1Layout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(usernameLbl, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(profileImage, GroupLayout.PREFERRED_SIZE, 43, GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(searchBarTF, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
+                                .addGap(14, 14, 14)
+                                .addGroup(panel1Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                    .addComponent(contactLbl)
+                                    .addComponent(contactImage))))
+                        .addContainerGap(202, Short.MAX_VALUE))
             );
         }
 
@@ -203,7 +236,7 @@ public class HomeForm extends JPanel {
                         .addComponent(scrollPane1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
                         .addGap(9, 9, 9)
                         .addComponent(textArea2, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 224, Short.MAX_VALUE)
+                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 157, Short.MAX_VALUE)
                         .addComponent(searchBarTF3, GroupLayout.PREFERRED_SIZE, 47, GroupLayout.PREFERRED_SIZE)
                         .addGap(21, 21, 21))
             );
@@ -230,7 +263,7 @@ public class HomeForm extends JPanel {
                     .addGroup(panel3Layout.createSequentialGroup()
                         .addGap(35, 35, 35)
                         .addComponent(searchBarTF2, GroupLayout.PREFERRED_SIZE, 176, GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 36, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(panel3Layout.createSequentialGroup()
                         .addGroup(panel3Layout.createParallelGroup()
                             .addGroup(panel3Layout.createSequentialGroup()
@@ -241,7 +274,7 @@ public class HomeForm extends JPanel {
                             .addGroup(panel3Layout.createSequentialGroup()
                                 .addGap(69, 69, 69)
                                 .addComponent(userProfileImage, GroupLayout.PREFERRED_SIZE, 100, GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(39, Short.MAX_VALUE))
+                        .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             );
             panel3Layout.setVerticalGroup(
                 panel3Layout.createParallelGroup()
@@ -254,7 +287,7 @@ public class HomeForm extends JPanel {
                         .addGroup(panel3Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                             .addComponent(button2)
                             .addComponent(button7))
-                        .addContainerGap(256, Short.MAX_VALUE))
+                        .addContainerGap(162, Short.MAX_VALUE))
             );
         }
 
@@ -272,13 +305,10 @@ public class HomeForm extends JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup()
-                .addComponent(panel1, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(panel1, GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
                 .addComponent(panel2, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(panel3, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-
-        //---- button5 ----
-        button5.setText("C");
         // JFormDesigner - End of component initialization  //GEN-END:initComponents  @formatter:on
     }
 
@@ -287,7 +317,7 @@ public class HomeForm extends JPanel {
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables  @formatter:off
-    // Generated using JFormDesigner Evaluation license - Snehal Shelte
+    // Generated using JFormDesigner Evaluation license - Roshan Rajendra Zope
     private JPanel panel1;
     private JLabel label1;
     private JLabel usernameLbl;
@@ -295,6 +325,7 @@ public class HomeForm extends JPanel {
     private JLabel contactLbl;
     private JTextField searchBarTF;
     private JLabel contactImage;
+    private JButton logoutBtn;
     private JPanel panel2;
     private JTextField searchBarTF3;
     private JLabel label4;
@@ -310,6 +341,5 @@ public class HomeForm extends JPanel {
     private JLabel userProfileImage;
     private JButton button2;
     private JButton button7;
-    private JButton button5;
     // JFormDesigner - End of variables declaration  //GEN-END:variables  @formatter:on
 }
