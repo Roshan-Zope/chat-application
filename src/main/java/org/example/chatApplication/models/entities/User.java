@@ -1,14 +1,16 @@
 package org.example.chatApplication.models.entities;
 
+import java.sql.Timestamp;
+
 /**
  * The User class represents the user entity in the chat application.
  * It holds essential information about a user, such as their unique ID (uid), username, email, and password.
  */
 public class User {
-    private String uid;       // Unique identifier for the user (e.g., a UUID)
-    private String username;  // The username of the user
-    private String email;     // The user's email address
-    private String password;  // The user's password (should be stored securely in a real application)
+    private int uid;             // Unique identifier for the user (e.g., a UUID)
+    private String username;        // The username of the user
+    private String email;           // The user's email address
+    private String password;        // The user's password (should be stored securely in a real application)
 
     /**
      * Constructor to initialize a new User with the provided uid, username, email, and password.
@@ -18,8 +20,21 @@ public class User {
      * @param email    The user's email address.
      * @param password The user's password.
      */
-    public User(String uid, String username, String email, String password) {
+    public User(int uid, String username, String email, String password) {
         this.uid = uid;
+        this.username = username;
+        this.email = email;
+        this.password = password;
+    }
+
+    /**
+     * Constructor to initialize a new User with the provided username, email, and password.
+     *
+     * @param username  The username chosen by the user.
+     * @param email     The user's email address.
+     * @param password  The user's password.
+     * */
+    public User(String username, String email, String password) {
         this.username = username;
         this.email = email;
         this.password = password;
@@ -84,7 +99,7 @@ public class User {
      *
      * @return The user's unique identifier (uid).
      */
-    public String getUid() {
+    public int getUid() {
         return uid;
     }
 
@@ -93,7 +108,17 @@ public class User {
      *
      * @param uid The new uid to be set for the user.
      */
-    public void setUid(String uid) {
+    public void setUid(int uid) {
         this.uid = uid;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "uid='" + uid + '\'' +
+                ", username='" + username + '\'' +
+                ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                '}';
     }
 }

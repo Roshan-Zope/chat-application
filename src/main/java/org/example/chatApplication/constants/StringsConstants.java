@@ -20,7 +20,7 @@ public class StringsConstants {
     public static final String DATABASE_PASSWORD = "Ro$h@n456";                              // Password for the postgresql server
 
     // Constants for User table schema
-    public static final String DATABASE_USER_TABLE = "user";                          // Table name (user)
+    public static final String DATABASE_USER_TABLE = "users";                          // Table name (user)
     public static final String DATABASE_USER_TABLE_UID_COLUMN = "uid";                // Column name (uid)
     public static final String DATABASE_USER_TABLE_USERNAME_COLUMN = "username";      // Column name (username)
     public static final String DATABASE_USER_TABLE_EMAIL_COLUMN = "email";            // Column name (email)
@@ -31,11 +31,16 @@ public class StringsConstants {
     public static final String DATABASE_SESSIONS_TABLE = "sessions";                       // Table name (sessions)
     public static final String DATABASE_SESSIONS_TABLE_SESSION_ID_COLUMN = "session_id";   // Column name (session_id)
     public static final String DATABASE_SESSIONS_TABLE_USER_ID_COLUMN = "user_id";         // Column name (user_id)
-    public static final String DATABASE_SESSIONS_TABLE_SESSION_TOKEN_COLUMN = "email";     // Column name (session_token)
-    public static final String DATABASE_SESSIONS_TABLE_EXPIRES_AT_COLUMN = "password";     // Column name (expires_at)
+    public static final String DATABASE_SESSIONS_TABLE_SESSION_TOKEN_COLUMN = "session_token";     // Column name (session_token)
+    public static final String DATABASE_SESSIONS_TABLE_EXPIRES_AT_COLUMN = "expires_at";     // Column name (expires_at)
     public static final String DATABASE_SESSIONS_TABLE_CREATED_AT_COLUMN = "created_at";   // Column name (created_at)
     public static final String DATABASE_SESSIONS_TABLE_LAST_ACTIVE_COLUMN = "last_active"; // Column name (last_active)
 
     // Constants for database Query
-    public static final String GET_USER_BY_USERNAME_QUERY = "select * from user where username = ?"; // Query for retrieving user by username
+    public static final String GET_USER_BY_USERNAME_QUERY = "select * from " + DATABASE_USER_TABLE + " where " + DATABASE_USER_TABLE_USERNAME_COLUMN + " = ?";                                          // Query for retrieving user by username
+    public static final String SAVE_USER_QUERY = "insert into " + DATABASE_USER_TABLE + " (" + DATABASE_USER_TABLE_USERNAME_COLUMN + ", " + DATABASE_USER_TABLE_EMAIL_COLUMN + ", " + DATABASE_USER_TABLE_PASSWORD_COLUMN + ") values (?, ?, ?)";    // Query for inserting new user
+    public static final String CREATE_SESSION_QUERY = "insert into " + DATABASE_SESSIONS_TABLE + " (" + DATABASE_SESSIONS_TABLE_USER_ID_COLUMN + ", " + DATABASE_SESSIONS_TABLE_SESSION_TOKEN_COLUMN + ", " + DATABASE_SESSIONS_TABLE_CREATED_AT_COLUMN + ") values (?, ?, CURRENT_TIMESTAMP)";
+    public static final String DELETE_SESSION_QUERY = "delete from " + DATABASE_SESSIONS_TABLE + " where " + DATABASE_SESSIONS_TABLE_USER_ID_COLUMN + " = ?";
+    public static final String GET_SESSION_BY_SESSION_TOKEN_QUERY = "select * from " + DATABASE_SESSIONS_TABLE + " where " + DATABASE_SESSIONS_TABLE_SESSION_TOKEN_COLUMN + " = ?";
+    public static final String GET_SESSION_BY_USER_ID_QUERY = "select * from " + DATABASE_SESSIONS_TABLE + " where " + DATABASE_SESSIONS_TABLE_USER_ID_COLUMN + " = ?";
 }

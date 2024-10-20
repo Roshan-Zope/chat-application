@@ -19,10 +19,30 @@ public class UserDAO {
             ResultSet resultSet = query.executeQuery();
 
             if (resultSet.next()) {
-
+                return new User(
+                    resultSet.getInt(StringsConstants.DATABASE_USER_TABLE_UID_COLUMN),
+                    resultSet.getString(StringsConstants.DATABASE_USER_TABLE_USERNAME_COLUMN),
+                    resultSet.getString(StringsConstants.DATABASE_USER_TABLE_EMAIL_COLUMN),
+                    resultSet.getString(StringsConstants.DATABASE_USER_TABLE_PASSWORD_COLUMN)
+                );
             }
         } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        return null;
+    }
 
+    public void saveUser(User user) {
+        try (
+            Connection connection = DatabaseConnection.getConnection();
+            PreparedStatement query = connection.prepareStatement(StringsConstants.SAVE_USER_QUERY)
+        ) {
+           query.setString(1, user.getUsername());
+           query.setString(2, user.getEmail());
+           query.setString(3, user.getPassword());
+           query.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
         }
     }
 }

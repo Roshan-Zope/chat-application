@@ -3,7 +3,10 @@ package org.example.chatApplication;
 import com.formdev.flatlaf.FlatLaf;
 import com.formdev.flatlaf.fonts.roboto.FlatRobotoFont;
 import com.formdev.flatlaf.themes.FlatMacDarkLaf;
+import org.example.chatApplication.controllers.SessionController;
+import org.example.chatApplication.database.SessionStorage;
 import org.example.chatApplication.utilities.Navigator;
+import org.example.chatApplication.view.HomeForm;
 import org.example.chatApplication.view.LoginForm;
 import org.example.chatApplication.view.SignupForm;
 import org.example.chatApplication.constants.ScreenConstants;
@@ -16,6 +19,7 @@ import java.awt.*;
  */
 public class App extends JFrame {
     private static Navigator navigator; // The navigator to handle screen transitions
+    private static SessionController sessionController;
 
     /**
      * Constructor to initialize the application by calling the init() method.
@@ -43,19 +47,32 @@ public class App extends JFrame {
         // FlatMacDarkLaf.setup();
 
         // Initialize the navigator for handling screen transitions
-        navigator = new Navigator();
+        navigator = Navigator.getInstance();
         add(navigator.getMainPanel()); // Add the main panel to the JFrame
 
         // Initialize the login and signup screens
         JPanel loginScreen = new LoginForm().getMainPanel();   // Existing login screen class
         JPanel signupScreen = SignupForm.getMainPanel(); // Existing signup screen class
+        JPanel homeScreen = HomeForm.getMainPanel(); // Existing home screen class
 
         // Add the login and signup screens to the navigator using constants
         navigator.addScreen(ScreenConstants.LOGIN, loginScreen);
         navigator.addScreen(ScreenConstants.SIGNUP, signupScreen);
+        navigator.addScreen(ScreenConstants.HOME, homeScreen);
 
-        // Show the login screen initially using the screen constant
-        navigator.showScreen(ScreenConstants.LOGIN);
+        // Check if user is login or logout
+        sessionController = new SessionController();
+        String sessionToken = SessionStorage.loadSessionToken();
+        if (sessionToken != null) {
+            boolean isSessionValid = sessionController.validateSession(sessionToken);
+            if (isSessionValid) {
+                navigator.showScreen(ScreenConstants.HOME);
+            } else {
+                navigator.showScreen(ScreenConstants.LOGIN);
+            }
+        } else {
+            navigator.showScreen(ScreenConstants.LOGIN);
+        }
 
         // Set the window title and basic configurations
         setTitle("Login Page");

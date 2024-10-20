@@ -60,6 +60,7 @@ new FormModel {
 					"font": new java.awt.Font( "JetBrains Mono ExtraBold", 0, 13 )
 					"borderPainted": false
 					"foreground": sfield java.awt.Color white
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "onLoginLink", true ) )
 				} )
 				add( new FormComponent( "javax.swing.JButton" ) {
 					name: "button2"
@@ -82,6 +83,7 @@ new FormModel {
 					name: "signupBtn"
 					"text": "Sign Up"
 					"background": new java.awt.Color( 255, 255, 255, 255 )
+					addEvent( new FormEvent( "java.awt.event.ActionListener", "actionPerformed", "onSignUp", true ) )
 				} )
 			} )
 			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class org.jdesktop.layout.GroupLayout ) {

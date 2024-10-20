@@ -4,7 +4,14 @@
 
 package org.example.chatApplication.view;
 
+import org.example.chatApplication.constants.ScreenConstants;
+import org.example.chatApplication.controllers.AuthController;
+import org.example.chatApplication.controllers.EmailController;
+import org.example.chatApplication.utilities.Navigator;
+import org.example.chatApplication.utilities.OTPGenerator;
+
 import java.awt.*;
+import java.awt.event.*;
 import javax.swing.*;
 import javax.swing.GroupLayout;
 
@@ -12,6 +19,9 @@ import javax.swing.GroupLayout;
  * @author rosha
  */
 public class SignupForm extends JPanel {
+    private AuthController authController;
+    private Navigator navigator;
+
     public SignupForm() {
         initComponents();
     }
@@ -20,7 +30,31 @@ public class SignupForm extends JPanel {
         return new SignupForm();
     }
 
+    private void onSignUp(ActionEvent e) {
+        String username = usernameTF.getText().trim();
+        String password = String.valueOf(passwordPF.getPassword()).trim();
+        String email = emailTF.getText().trim();
+
+        String otp = OTPGenerator.generateOTP();
+        EmailController.sendEmailAsync(email, "OTP Verification", "your otp is: " + otp);
+        String userOtp = JOptionPane.showInputDialog(null, "OTP has been sent to your email. please enter otp to verify", JOptionPane.INFORMATION_MESSAGE);
+
+        boolean validateOtp = otp.equals(userOtp);
+
+        if (authController.signUp(username, email, password, validateOtp)) {
+            navigator.showScreen(ScreenConstants.HOME);
+        } else {
+            System.out.println("Signup failed");
+        }
+    }
+
+    private void onLoginLink(ActionEvent e) {
+        navigator.showScreen(ScreenConstants.LOGIN);
+    }
+
     private void initComponents() {
+        authController = new AuthController();
+        navigator = Navigator.getInstance();
         // JFormDesigner - Component initialization - DO NOT MODIFY  //GEN-BEGIN:initComponents  @formatter:off
         // Generated using JFormDesigner Evaluation license - Roshan Rajendra Zope
         mainPanel = new JPanel();
@@ -42,12 +76,11 @@ public class SignupForm extends JPanel {
 
         //======== this ========
         setPreferredSize(new Dimension(900, 500));
-        setBorder ( new javax . swing. border .CompoundBorder ( new javax . swing. border .TitledBorder ( new javax . swing. border .
-        EmptyBorder ( 0, 0 ,0 , 0) ,  "JF\u006frmDes\u0069gner \u0045valua\u0074ion" , javax. swing .border . TitledBorder. CENTER ,javax . swing
-        . border .TitledBorder . BOTTOM, new java. awt .Font ( "D\u0069alog", java .awt . Font. BOLD ,12 ) ,
-        java . awt. Color .red ) , getBorder () ) );  addPropertyChangeListener( new java. beans .PropertyChangeListener ( )
-        { @Override public void propertyChange (java . beans. PropertyChangeEvent e) { if( "\u0062order" .equals ( e. getPropertyName () ) )
-        throw new RuntimeException( ) ;} } );
+        setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new javax. swing. border. EmptyBorder(
+        0, 0, 0, 0) , "JF\u006frmD\u0065sig\u006eer \u0045val\u0075ati\u006fn", javax. swing. border. TitledBorder. CENTER, javax. swing. border. TitledBorder
+        . BOTTOM, new java .awt .Font ("Dia\u006cog" ,java .awt .Font .BOLD ,12 ), java. awt. Color.
+        red) , getBorder( )) );  addPropertyChangeListener (new java. beans. PropertyChangeListener( ){ @Override public void propertyChange (java .
+        beans .PropertyChangeEvent e) {if ("\u0062ord\u0065r" .equals (e .getPropertyName () )) throw new RuntimeException( ); }} );
 
         //======== rightPanel ========
         {
@@ -81,6 +114,7 @@ public class SignupForm extends JPanel {
             loginLinkBtn.setFont(new Font("JetBrains Mono ExtraBold", Font.PLAIN, 13));
             loginLinkBtn.setBorderPainted(false);
             loginLinkBtn.setForeground(Color.white);
+            loginLinkBtn.addActionListener(e -> onLoginLink(e));
 
             //---- button2 ----
             button2.setText("Sign up");
@@ -97,6 +131,7 @@ public class SignupForm extends JPanel {
             //---- signupBtn ----
             signupBtn.setText("Sign Up");
             signupBtn.setBackground(Color.white);
+            signupBtn.addActionListener(e -> onSignUp(e));
 
             GroupLayout rightPanelLayout = new GroupLayout(rightPanel);
             rightPanel.setLayout(rightPanelLayout);

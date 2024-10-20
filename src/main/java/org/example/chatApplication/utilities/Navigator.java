@@ -12,17 +12,29 @@ public class Navigator {
     private JPanel mainPanel;  // The main panel that holds all screens and uses CardLayout
     private CardLayout cardLayout;  // Layout manager for handling screen switching
     private HashMap<String, JPanel> screens;  // A map to store screens with their corresponding names
+    private static Navigator navigator;
 
     /**
      * Constructor to initialize the main panel with CardLayout and set up the screen map.
      */
-    public Navigator() {
+    private Navigator() {
         mainPanel = new JPanel();
         cardLayout = new CardLayout();
         screens = new HashMap<>();
 
         // Set the layout of the main panel to CardLayout
         mainPanel.setLayout(cardLayout);
+    }
+
+    public static Navigator getInstance() {
+        if (navigator == null) {
+            synchronized (Navigator.class) { // Step 4: Synchronization for thread safety
+                if (navigator == null) {
+                    navigator = new Navigator();
+                }
+            }
+        }
+        return navigator;
     }
 
     /**

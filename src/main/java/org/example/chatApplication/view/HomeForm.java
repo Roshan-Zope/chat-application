@@ -282,6 +282,10 @@ public class HomeForm extends JPanel {
         // JFormDesigner - End of component initialization  //GEN-END:initComponents  @formatter:on
     }
 
+    public static JPanel getMainPanel() {
+        return new HomeForm();
+    }
+
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables  @formatter:off
     // Generated using JFormDesigner Evaluation license - Snehal Shelte
     private JPanel panel1;
