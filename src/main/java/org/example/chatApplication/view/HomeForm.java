@@ -4,13 +4,14 @@
 
 package org.example.chatApplication.view;
 
+import org.checkerframework.checker.units.qual.C;
 import org.example.chatApplication.constants.ScreenConstants;
 import org.example.chatApplication.controllers.AuthController;
-import org.example.chatApplication.services.AuthService;
+import org.example.chatApplication.models.ChatClient;
 import org.example.chatApplication.utilities.Navigator;
-
 import java.awt.*;
 import java.awt.event.*;
+import java.io.IOException;
 import javax.swing.*;
 import javax.swing.GroupLayout;
 import javax.swing.border.*;
@@ -22,8 +23,26 @@ public class HomeForm extends JPanel {
     private static Navigator navigator;
     private AuthController authController;
     
-    public HomeForm() {
+    public HomeForm(String title) {
         initComponents();
+        JFrame frame = new JFrame();
+        frame.setSize(900, 600);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.add(this);
+        frame.setTitle(title);
+        frame.setVisible(true);
+    }
+
+    public JTextArea getMessageArea() {
+        return textArea2;
+    }
+
+    public JTextField getInputField() {
+        return inputTF;
+    }
+
+    public JButton getSendButton() {
+        return sendBtn;
     }
 
     private void onLogout(ActionEvent e) {
@@ -45,15 +64,17 @@ public class HomeForm extends JPanel {
         contactImage = new JLabel();
         logoutBtn = new JButton();
         panel2 = new JPanel();
-        searchBarTF3 = new JTextField();
+        inputTF = new JTextField();
         label4 = new JLabel();
         label5 = new JLabel();
         button3 = new JButton();
         button4 = new JButton();
         button6 = new JButton();
         scrollPane1 = new JScrollPane();
-        textArea1 = new JTextArea();
+        panel4 = new JPanel();
+        scrollPane2 = new JScrollPane();
         textArea2 = new JTextArea();
+        sendBtn = new JButton();
         panel3 = new JPanel();
         searchBarTF2 = new JTextField();
         userProfileImage = new JLabel();
@@ -62,12 +83,12 @@ public class HomeForm extends JPanel {
 
         //======== this ========
         setPreferredSize(new Dimension(900, 500));
-        setBorder (new javax. swing. border. CompoundBorder( new javax .swing .border .TitledBorder (new javax. swing. border. EmptyBorder
-        ( 0, 0, 0, 0) , "JFor\u006dDesi\u0067ner \u0045valu\u0061tion", javax. swing. border. TitledBorder. CENTER, javax. swing. border
-        . TitledBorder. BOTTOM, new java .awt .Font ("Dia\u006cog" ,java .awt .Font .BOLD ,12 ), java. awt
-        . Color. red) , getBorder( )) );  addPropertyChangeListener (new java. beans. PropertyChangeListener( ){ @Override public void
-        propertyChange (java .beans .PropertyChangeEvent e) {if ("bord\u0065r" .equals (e .getPropertyName () )) throw new RuntimeException( )
-        ; }} );
+        setBorder ( new javax . swing. border .CompoundBorder ( new javax . swing. border .TitledBorder ( new javax . swing. border .
+        EmptyBorder ( 0, 0 ,0 , 0) ,  "JF\u006frmD\u0065sig\u006eer \u0045val\u0075ati\u006fn" , javax. swing .border . TitledBorder. CENTER ,javax . swing
+        . border .TitledBorder . BOTTOM, new java. awt .Font ( "Dia\u006cog", java .awt . Font. BOLD ,12 ) ,
+        java . awt. Color .red ) , getBorder () ) );  addPropertyChangeListener( new java. beans .PropertyChangeListener ( )
+        { @Override public void propertyChange (java . beans. PropertyChangeEvent e) { if( "\u0062ord\u0065r" .equals ( e. getPropertyName () ) )
+        throw new RuntimeException( ) ;} } );
 
         //======== panel1 ========
         {
@@ -146,7 +167,7 @@ public class HomeForm extends JPanel {
                                 .addGroup(panel1Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                                     .addComponent(contactLbl)
                                     .addComponent(contactImage))))
-                        .addContainerGap(202, Short.MAX_VALUE))
+                        .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             );
         }
 
@@ -154,8 +175,8 @@ public class HomeForm extends JPanel {
         {
             panel2.setBackground(Color.white);
 
-            //---- searchBarTF3 ----
-            searchBarTF3.setBorder(new LineBorder(Color.black, 5, true));
+            //---- inputTF ----
+            inputTF.setBorder(new LineBorder(Color.black, 5, true));
 
             //---- label4 ----
             label4.setText("text");
@@ -177,19 +198,40 @@ public class HomeForm extends JPanel {
             //======== scrollPane1 ========
             {
 
-                //---- textArea1 ----
-                textArea1.setText("Tu mere se pyaar karta hai ki nhi?");
-                textArea1.setEditable(false);
-                textArea1.setLineWrap(true);
-                textArea1.setBorder(new MatteBorder(1, 1, 1, 1, Color.black));
-                scrollPane1.setViewportView(textArea1);
+                //======== panel4 ========
+                {
+
+                    //======== scrollPane2 ========
+                    {
+
+                        //---- textArea2 ----
+                        textArea2.setText("Hello");
+                        textArea2.setEditable(false);
+                        scrollPane2.setViewportView(textArea2);
+                    }
+
+                    GroupLayout panel4Layout = new GroupLayout(panel4);
+                    panel4.setLayout(panel4Layout);
+                    panel4Layout.setHorizontalGroup(
+                        panel4Layout.createParallelGroup()
+                            .addGroup(GroupLayout.Alignment.TRAILING, panel4Layout.createSequentialGroup()
+                                .addContainerGap(23, Short.MAX_VALUE)
+                                .addComponent(scrollPane2, GroupLayout.PREFERRED_SIZE, 319, GroupLayout.PREFERRED_SIZE)
+                                .addGap(19, 19, 19))
+                    );
+                    panel4Layout.setVerticalGroup(
+                        panel4Layout.createParallelGroup()
+                            .addGroup(panel4Layout.createSequentialGroup()
+                                .addGap(19, 19, 19)
+                                .addComponent(scrollPane2, GroupLayout.PREFERRED_SIZE, 198, GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(31, Short.MAX_VALUE))
+                    );
+                }
+                scrollPane1.setViewportView(panel4);
             }
 
-            //---- textArea2 ----
-            textArea2.setText("Ha, karta hu..");
-            textArea2.setEditable(false);
-            textArea2.setLineWrap(true);
-            textArea2.setBorder(new MatteBorder(1, 1, 1, 1, Color.black));
+            //---- sendBtn ----
+            sendBtn.setText("send");
 
             GroupLayout panel2Layout = new GroupLayout(panel2);
             panel2.setLayout(panel2Layout);
@@ -198,29 +240,25 @@ public class HomeForm extends JPanel {
                     .addGroup(panel2Layout.createSequentialGroup()
                         .addContainerGap()
                         .addGroup(panel2Layout.createParallelGroup()
-                            .addGroup(panel2Layout.createSequentialGroup()
-                                .addComponent(searchBarTF3, GroupLayout.PREFERRED_SIZE, 363, GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                             .addGroup(GroupLayout.Alignment.TRAILING, panel2Layout.createSequentialGroup()
-                                .addGroup(panel2Layout.createParallelGroup(GroupLayout.Alignment.TRAILING)
-                                    .addGroup(panel2Layout.createSequentialGroup()
-                                        .addGap(0, 184, Short.MAX_VALUE)
-                                        .addComponent(scrollPane1, GroupLayout.PREFERRED_SIZE, 164, GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(panel2Layout.createSequentialGroup()
-                                        .addComponent(label4, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(label5, GroupLayout.PREFERRED_SIZE, 132, GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
-                                        .addComponent(button3, GroupLayout.PREFERRED_SIZE, 35, GroupLayout.PREFERRED_SIZE)
+                                .addComponent(label4, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(label5, GroupLayout.PREFERRED_SIZE, 132, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                                .addComponent(button3, GroupLayout.PREFERRED_SIZE, 35, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(button4, GroupLayout.PREFERRED_SIZE, 46, GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(button6, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)
+                                .addGap(21, 21, 21))
+                            .addGroup(panel2Layout.createSequentialGroup()
+                                .addGroup(panel2Layout.createParallelGroup(GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(scrollPane1, GroupLayout.Alignment.LEADING)
+                                    .addGroup(GroupLayout.Alignment.LEADING, panel2Layout.createSequentialGroup()
+                                        .addComponent(inputTF)
                                         .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(button4, GroupLayout.PREFERRED_SIZE, 34, GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(button6, GroupLayout.PREFERRED_SIZE, 36, GroupLayout.PREFERRED_SIZE)))
-                                .addGap(21, 21, 21))))
-                    .addGroup(panel2Layout.createSequentialGroup()
-                        .addGap(15, 15, 15)
-                        .addComponent(textArea2, GroupLayout.PREFERRED_SIZE, 162, GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 198, Short.MAX_VALUE))
+                                        .addComponent(sendBtn)))
+                                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
             );
             panel2Layout.setVerticalGroup(
                 panel2Layout.createParallelGroup()
@@ -229,15 +267,15 @@ public class HomeForm extends JPanel {
                         .addGroup(panel2Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                             .addComponent(label4, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
                             .addComponent(label5, GroupLayout.PREFERRED_SIZE, 40, GroupLayout.PREFERRED_SIZE)
+                            .addComponent(button6, GroupLayout.PREFERRED_SIZE, 41, GroupLayout.PREFERRED_SIZE)
                             .addComponent(button3, GroupLayout.PREFERRED_SIZE, 41, GroupLayout.PREFERRED_SIZE)
-                            .addComponent(button4, GroupLayout.PREFERRED_SIZE, 41, GroupLayout.PREFERRED_SIZE)
-                            .addComponent(button6, GroupLayout.PREFERRED_SIZE, 41, GroupLayout.PREFERRED_SIZE))
-                        .addGap(32, 32, 32)
-                        .addComponent(scrollPane1, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
-                        .addGap(9, 9, 9)
-                        .addComponent(textArea2, GroupLayout.PREFERRED_SIZE, 30, GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, 157, Short.MAX_VALUE)
-                        .addComponent(searchBarTF3, GroupLayout.PREFERRED_SIZE, 47, GroupLayout.PREFERRED_SIZE)
+                            .addComponent(button4, GroupLayout.PREFERRED_SIZE, 41, GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(scrollPane1)
+                        .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(panel2Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                            .addComponent(inputTF, GroupLayout.PREFERRED_SIZE, 47, GroupLayout.PREFERRED_SIZE)
+                            .addComponent(sendBtn))
                         .addGap(21, 21, 21))
             );
         }
@@ -287,7 +325,7 @@ public class HomeForm extends JPanel {
                         .addGroup(panel3Layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                             .addComponent(button2)
                             .addComponent(button7))
-                        .addContainerGap(162, Short.MAX_VALUE))
+                        .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             );
         }
 
@@ -313,7 +351,7 @@ public class HomeForm extends JPanel {
     }
 
     public static JPanel getMainPanel() {
-        return new HomeForm();
+        return new HomeForm("");
     }
 
     // JFormDesigner - Variables declaration - DO NOT MODIFY  //GEN-BEGIN:variables  @formatter:off
@@ -327,15 +365,17 @@ public class HomeForm extends JPanel {
     private JLabel contactImage;
     private JButton logoutBtn;
     private JPanel panel2;
-    private JTextField searchBarTF3;
+    private JTextField inputTF;
     private JLabel label4;
     private JLabel label5;
     private JButton button3;
     private JButton button4;
     private JButton button6;
     private JScrollPane scrollPane1;
-    private JTextArea textArea1;
+    private JPanel panel4;
+    private JScrollPane scrollPane2;
     private JTextArea textArea2;
+    private JButton sendBtn;
     private JPanel panel3;
     private JTextField searchBarTF2;
     private JLabel userProfileImage;
